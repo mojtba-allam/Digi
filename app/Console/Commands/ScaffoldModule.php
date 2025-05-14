@@ -14,6 +14,12 @@ class ScaffoldModule extends Command
    protected $description = 'Scaffold a new module with standard Laravel Modular structure';
 
 
+    public function handle()
+    {
+        $name = ucfirst($this->argument('name'));
+        $modulePath = base_path("Modules/{$name}");
+
+
         $structure = [
             'database/migrations',
             'database/seeders',
