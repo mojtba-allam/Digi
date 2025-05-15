@@ -5,7 +5,7 @@ namespace Modules\CustomerSupport\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Modules\User\app\Models\User;
+use Modules\Authorization\Models\User;
 
 class Chat extends Model
 {

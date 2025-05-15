@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Modules\User\app\Models\User;
-use Modules\PromotionAndCoupon\app\Models\Coupon;
-use Modules\Product\app\Models\Product;
+use Modules\Authorization\Models\User;
+use Modules\PromotionAndCoupon\Models\Coupon;
+use Modules\Product\Models\Product;
 
 // use Modules\Cart\Database\Factories\CartFactory;
 

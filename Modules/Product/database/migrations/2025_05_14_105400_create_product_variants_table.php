@@ -18,7 +18,6 @@ return new class extends Migration
             $table->decimal('price');
             $table->foreignId('product_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('product_media_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('product_attribute_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
