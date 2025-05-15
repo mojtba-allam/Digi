@@ -10,14 +10,10 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('attribute_variant', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('description');
-            $table->decimal('price');
-            $table->integer('stock');
-            $table->string('status');
-            $table->foreignId('vendor_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('product_variant_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('product_attribute_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -26,6 +22,6 @@ return new class extends Migration
      * Reverse the migrations.
      */
     public function down(): void {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('attribute_variant');
     }
 };

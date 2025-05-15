@@ -40,27 +40,6 @@ class ScaffoldModule extends Command
             'tests/Unit',
         ];
 
-
-       $structure = [
-           'database/migrations',
-           'database/seeders',
-           'database/factories',
-           'routes',
-           'app/Models/',
-           'app/Http/Controllers',
-           'app/Http/Middleware',
-           'app/Http/Requests',
-           'app/Http/Resources',
-           'app/Providers',
-           'Repositories',
-           'Resources/assets/js',
-           'Resources/assets/sass',
-           'Resources/lang',
-           'Resources/views',
-           'tests/Feature',
-           'tests/Unit',
-       ];
-
         // Create empty service providers
         File::put("$modulePath/app/Providers/{$name}ServiceProvider.php", "<?php\n\nnamespace Modules\\{$name}\\Providers;\n\nuse Illuminate\\Support\\ServiceProvider;\n\nclass {$name}ServiceProvider extends ServiceProvider\n{\n    public function register() {}\n    public function boot() {}\n}");
 
