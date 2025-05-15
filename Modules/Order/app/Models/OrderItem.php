@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\Order\Models;
+namespace Modules\Order\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Modules\Product\Models\Product;
+use Modules\Product\app\Models\Product;
 
 
 // use Modules\Order\Database\Factories\OrderItemFactory;

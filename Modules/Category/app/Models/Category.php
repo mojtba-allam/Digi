@@ -1,11 +1,11 @@
 <?php
 
-namespace Modules\Category\Models;
+namespace Modules\Category\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Modules\Product\Models\Product;
+use Modules\Product\app\Models\Product;
 
 // use Modules\Category\Database\Factories\CategoryFactory;
 

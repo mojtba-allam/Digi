@@ -2,13 +2,12 @@
 
 namespace Modules\Admin\app\Models;
 
-use Couchbase\Role;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Modules\Authorization\Models\TemporaryPermission;
-
+use Modules\Authorization\app\Models\TemporaryPermission;
+use Modules\Authorization\app\Models\Role;
 // use Modules\Admin\Database\Factories\AdminFactory;
 
 class Admin extends Model

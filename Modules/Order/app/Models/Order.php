@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Order\Models;
+namespace Modules\Order\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -8,10 +8,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
-use Modules\Business\Models\Vendor;
-use Modules\CommissionAndPayout\Models\Commission;
-use Modules\Payment\Models\Payment;
-use Modules\Authorization\Models\User;
+use Modules\Business\app\Models\Vendor;
+use Modules\CommissionAndPayout\app\Models\Commission;
+use Modules\Payment\app\Models\Payment;
+use Modules\Authorization\app\Models\User;
+use Modules\Order\app\Models\OrderStatus;
+use Modules\Order\app\Models\OrderInvoice;
+use Modules\Order\app\Models\OrderItem;
 
 // use Modules\Order\Database\Factories\OrderFactory;
 
@@ -36,7 +39,7 @@ class Order extends Model
 
     public function order_status(): HasMany
     {
-        return $this->hasMany(OrderStatu::class);
+        return $this->hasMany(OrderStatus::class);
     }
 
     public function order_invoices(): HasMany

@@ -1,11 +1,14 @@
 <?php
 
-namespace Modules\Authorization\Models;
+namespace Modules\Authorization\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Modules\Admin\Models\Admin;
-
+use Modules\Admin\app\Models\Admin;
+use Modules\Authorization\app\Models\Permission;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Modules\Authorization\app\Models\TemporaryPermission;
 // use Modules\Authorization\Database\Factories\RoleFactory;
 
 class Role extends Model
@@ -17,13 +20,18 @@ class Role extends Model
      */
     protected $fillable = ['name','id'];
 
-    public function admins()
+    public function admins():HasMany
     {
         return $this->hasMany(Admin::class);
     }
 
-    public function permissions()
+    public function permissions():HasMany
     {
-        return $this->belongsToMany(Permission::class, 'role_permissions');
+        return $this->hasMany(Permission::class);
+    }
+
+    public function temporary_permissions():HasMany
+    {
+        return $this->hasMany(TemporaryPermission::class);
     }
 }
