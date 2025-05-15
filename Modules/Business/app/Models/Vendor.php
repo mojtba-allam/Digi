@@ -8,11 +8,15 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
-use Modules\Authorization\Models\User;
-use Modules\CommissionAndPayout\Models\Commission;
-use Modules\CommissionAndPayout\Models\Payout;
-use Modules\CommissionAndPayout\Models\Settlement;
-
+use Modules\Authorization\app\Models\User;
+use Modules\CommissionAndPayout\app\Models\Commission;
+use Modules\CommissionAndPayout\app\Models\Payout;
+use Modules\CommissionAndPayout\app\Models\Settlement;
+use Modules\Product\app\Models\Product;
+use Modules\Order\app\Models\Order;
+use Modules\Business\app\Models\VendorProfile;
+use Modules\Business\app\Models\VendorCommission;
+use Modules\Order\app\Models\ReturnRequest;
 // use Modules\Business\Database\Factories\VendorFactory;
 
 class Vendor extends Model
