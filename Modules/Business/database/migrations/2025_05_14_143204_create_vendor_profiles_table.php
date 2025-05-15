@@ -9,14 +9,12 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void {
-        Schema::create('products', function (Blueprint $table) {
+    public function up()
+    {
+        Schema::create('vendor_profiles', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('tax_id');
             $table->string('description');
-            $table->decimal('price');
-            $table->integer('stock');
-            $table->string('status');
             $table->foreignId('vendor_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
@@ -25,7 +23,8 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void {
-        Schema::dropIfExists('products');
+    public function down(): void
+    {
+        Schema::dropIfExists('vendor_profiles');
     }
 };
