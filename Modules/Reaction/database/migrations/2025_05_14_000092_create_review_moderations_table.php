@@ -13,15 +13,9 @@ return new class extends Migration
     {
         Schema::create('review_moderations', function (Blueprint $table) {
             $table->id();
-            $table->integer('review_id');
+            $table->foreignId('review_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->string('status');
             $table->timestamps();
-
-            // Define foreign key constraint
-            $table->foreignId('review_id')
-                  ->constrained('reviews')
-                  ->onDelete('cascade')
-                  ->onUpdate('cascade');
         });
     }
 

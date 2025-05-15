@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\Authorization\app\Models\Role;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Modules\Admin\app\Models\Admin;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Modules\Authorization\app\Models\TemporaryPermission;
 // use Modules\Authorization\Database\Factories\PermissionFactory;
 
 class Permission extends Model
@@ -24,8 +25,10 @@ class Permission extends Model
         return $this->belongsToMany(Role::class);
     }
 
-    public function admins():BelongsToMany
+    public function temporary_permissions():HasMany
     {
-        return $this->belongsToMany(Admin::class);
+        return $this->hasMany(TemporaryPermission::class);
     }
+
+
 }
