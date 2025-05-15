@@ -1,13 +1,13 @@
 <?php
 
-namespace Modules\Payment\Models;
+namespace Modules\Payment\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Modules\Order\Models\Order;
-
+use Modules\Order\app\Models\Order;
+use Modules\Payment\app\Models\Transaction;
 // use Modules\Payment\Database\Factories\PaymentsFactory;
 
 class Payment extends Model

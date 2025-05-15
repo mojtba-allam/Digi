@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\SearchAndFiltering\Models;
+namespace Modules\SearchAndFiltering\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

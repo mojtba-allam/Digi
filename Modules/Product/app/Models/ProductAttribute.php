@@ -1,11 +1,13 @@
 <?php
 
-namespace Modules\Product\Models;
+namespace Modules\Product\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Modules\Product\app\Models\ProductVariant;
+use Modules\Product\app\Models\Product;
 
 // use Modules\Product\Database\Factories\ProductAttributeFactory;
 

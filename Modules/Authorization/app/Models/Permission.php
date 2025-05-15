@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\Authorization\Models;
+namespace Modules\Authorization\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Modules\Admin\Models\Admin;
-use Modules\Admin\Models\Role;
-
+use Modules\Authorization\app\Models\Role;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Modules\Admin\app\Models\Admin;
 // use Modules\Authorization\Database\Factories\PermissionFactory;
 
 class Permission extends Model
@@ -17,15 +17,15 @@ class Permission extends Model
      * The attributes that are mass assignable.
      */
 
-    protected $fillable = ['name', 'description'];
+    protected $fillable = ['name', 'id'];
 
-    public function roles()
+    public function roles():BelongsToMany
     {
-        return $this->belongsToMany(Role::class, 'role_permissions');
+        return $this->belongsToMany(Role::class);
     }
 
-    public function admins()
+    public function admins():BelongsToMany
     {
-        return $this->belongsToMany(Admin::class, 'temporary_permissions');
+        return $this->belongsToMany(Admin::class);
     }
 }
