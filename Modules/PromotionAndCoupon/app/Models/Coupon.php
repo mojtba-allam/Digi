@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\PromotionAndCoupon\Models;
+namespace Modules\PromotionAndCoupon\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Modules\Cart\Models\Cart;
+use Modules\Cart\app\Models\Cart;
 
 // use Modules\PromotionAndCoupon\Database\Factories\CouponFactory;
 

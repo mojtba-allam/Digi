@@ -1,11 +1,13 @@
 <?php
 
-namespace Modules\Authorization\Models;
+namespace Modules\Authorization\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Modules\Admin\Models\Admin;
-
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Modules\Admin\app\Models\Admin;
+use Modules\Authorization\app\Models\Permission;
+use Modules\Authorization\app\Models\Role;
 // use Modules\Authorization\Database\Factories\TemporaryPermissionFactory;
 
 class TemporaryPermission extends Model
@@ -17,14 +19,19 @@ class TemporaryPermission extends Model
      */
     protected $fillable = ['admin_id', 'permission_id', 'expires_at'];
 
-    public function admin()
+    public function admin():BelongsTo
     {
         return $this->belongsTo(Admin::class);
     }
 
-    public function permission()
+    public function permission():BelongsTo
     {
         return $this->belongsTo(Permission::class);
+    }
+
+    public function role():BelongsTo
+    {
+        return $this->belongsTo(Role::class);
     }
 }
 
