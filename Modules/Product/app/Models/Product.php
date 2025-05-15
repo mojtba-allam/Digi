@@ -1,19 +1,19 @@
 <?php
 
-namespace Modules\Product\Models;
+namespace Modules\Product\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Modules\Business\Models\Vendor;
-use Modules\Cart\Models\Cart;
-use Modules\Category\Models\Brand;
-use Modules\Category\Models\Category;
-use Modules\Category\Models\Collection;
+use Modules\Business\app\Models\Vendor;
+use Modules\Cart\app\Models\Cart;
+use Modules\Category\app\Models\Brand;
+use Modules\Category\app\Models\Category;
+use Modules\Category\app\Models\Collection;
 use Modules\List\app\Models\Wishlist;
-use Modules\Order\Models\OrderItem;
+use Modules\Order\app\Models\OrderItem;
 use Modules\Reaction\app\Models\Review;
 
 // use Modules\Product\Database\Factories\ProductFactory;

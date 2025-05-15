@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\CommissionAndPayout\Models;
+namespace Modules\CommissionAndPayout\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Modules\Business\Models\Vendor;
-use Modules\Order\Models\Order;
+use Modules\Business\app\Models\Vendor;
+use Modules\Order\app\Models\Order;
 
 // use Modules\CommissionAndPayout\Database\Factories\CommissionFactory;
 

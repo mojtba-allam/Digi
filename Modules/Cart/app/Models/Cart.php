@@ -1,14 +1,14 @@
 <?php
 
-namespace Modules\Cart\Models;
+namespace Modules\Cart\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Modules\Authorization\Models\User;
+use Modules\Authorization\app\Models\User;
 use Modules\PromotionAndCoupon\Models\Coupon;
-use Modules\Product\Models\Product;
+use Modules\Product\app\Models\Product;
 
 // use Modules\Cart\Database\Factories\CartFactory;
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace Modules\PromotionAndCoupon\Models;
+namespace Modules\PromotionAndCoupon\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Modules\Product\Models\ProductMedia;
+use Modules\Product\app\Models\ProductMedia;
 
 // use Modules\PromotionAndCoupon\Database\Factories\PromotionFactory;
 
