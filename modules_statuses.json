@@ -1,4 +1,21 @@
 {
     "Blog": true,
-    "Product": true
+    "Product": true,
+    "Authorization": true,
+    "User": true,
+    "Business": true,
+    "Category": true,
+    "Cart": true,
+    "List": true,
+    "Reaction": true,
+    "Order": true,
+    "Payment": true,
+    "CommissionAndPayout": true,
+    "PromotionAndCoupon": true,
+    "ContentManagement": true,
+    "Notification": true,
+    "CustomerSupport": true,
+    "SearchAndFiltering": true,
+    "AnalyticsAndReporting": true,
+    "Admin": true
 }

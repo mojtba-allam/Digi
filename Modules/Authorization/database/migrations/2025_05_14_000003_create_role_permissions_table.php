@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('oauth', function (Blueprint $table) {
+        Schema::create('role_permissions', function (Blueprint $table) {
             $table->id();
-            $table->string('provider');
-            $table->foreignId('provider_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('role_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('permission_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -25,6 +24,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('oauth');
+        Schema::dropIfExists('role_permissions');
     }
 };
+
