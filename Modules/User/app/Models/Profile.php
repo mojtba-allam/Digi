@@ -1,10 +1,11 @@
 <?php
 
-namespace Modules\User\Models;
+namespace Modules\User\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Modules\Authorization\Models\User;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Modules\Authorization\app\Models\User;
 
 // use Modules\User\Database\Factories\ProfileFactory;
 
@@ -14,7 +15,7 @@ class Profile extends Model
 
     protected $fillable = ['avatar', 'bio', 'user_id'];
 
-    public function user()
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
