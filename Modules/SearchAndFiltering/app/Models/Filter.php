@@ -4,7 +4,6 @@ namespace Modules\SearchAndFiltering\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-// use Modules\SearchAndFiltering\Database\Factories\FilterFactory;
 
 class Filter extends Model
 {
@@ -18,8 +17,8 @@ class Filter extends Model
         'value',
     ];
 
-    // protected static function newFactory(): FilterFactory
-    // {
-    //     // return FilterFactory::new();
-    // }
+    protected static function newFactory()
+    {
+        return \Modules\SearchAndFiltering\database\factories\FilterFactory::new();
+    }
 }

@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Authorization\app\Models\User;
-// use Modules\Notification\Database\Factories\NotificationFactory;
 
 class Notification extends Model
 {
@@ -29,10 +28,10 @@ class Notification extends Model
         'read_at' => 'datetime',
     ];
 
-    // protected static function newFactory(): NotificationFactory
-    // {
-    //     // return NotificationFactory::new();
-    // }
+    protected static function newFactory()
+    {
+        return \Modules\Notification\database\factories\NotificationFactory::new();
+    }
 
     /**
      * Get the user that owns the notification.
