@@ -5,7 +5,6 @@ namespace Modules\List\app\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-// use Modules\List\Database\Factories\WishlistItemFactory;
 
 class WishlistItem extends Model
 {
@@ -27,8 +26,8 @@ class WishlistItem extends Model
         return $this->belongsTo(Wishlist::class);
     }
 
-    // protected static function newFactory(): WishlistItemFactory
-    // {
-    //     // return WishlistItemFactory::new();
-    // }
+    protected static function newFactory()
+    {
+        return \Modules\List\database\factories\WishlistItemFactory::new();
+    }
 }

@@ -28,8 +28,10 @@ class SearchLog extends Model
         return $this->belongsTo(User::class);
     }
 
-    // protected static function newFactory(): SearchLogFactory
-    // {
-    //     // return SearchLogFactory::new();
-    // }
+    protected static function newFactory()
+    {
+        return \Modules\SearchAndFiltering\database\factories\SearchLogFactory::new();
+    }
+
+
 }
