@@ -12,6 +12,6 @@ class WishlistItemSeeder extends Seeder
      */
     public function run(): void
     {
-        WishlistItem::factory()->count(1000)->create();
+        WishlistItem::factory()->count(10)->create();
     }
 }
