@@ -4,7 +4,6 @@ namespace Modules\AnalyticsAndReporting\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-// use Modules\AnalyticsAndReporting\Database\Factories\AnalyticFactory;
 
 class Analytic extends Model
 {
@@ -33,8 +32,8 @@ class Analytic extends Model
      */
     public $timestamps = false;
 
-    // protected static function newFactory(): AnalyticFactory
-    // {
-    //     // return AnalyticFactory::new();
-    // }
+    protected static function newFactory()
+    {
+        return \Modules\AnalyticsAndReporting\database\factories\AnalyticFactory::new();
+    }
 }

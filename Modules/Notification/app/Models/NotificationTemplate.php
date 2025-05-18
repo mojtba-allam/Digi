@@ -4,7 +4,6 @@ namespace Modules\Notification\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-// use Modules\Notification\Database\Factories\NotificationTemplateFactory;
 
 class NotificationTemplate extends Model
 {
@@ -19,8 +18,8 @@ class NotificationTemplate extends Model
         'body'
     ];
 
-    // protected static function newFactory(): NotificationTemplateFactory
-    // {
-    //     // return NotificationTemplateFactory::new();
-    // }
+    protected static function newFactory()
+    {
+        return \Modules\Notification\database\factories\NotificationTemplateFactory::new();
+    }
 }

@@ -5,7 +5,6 @@ namespace Modules\Reaction\app\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasOne;
-// use Modules\Reaction\Database\Factories\ReviewFactory;
 
 class Review extends Model
 {
@@ -29,8 +28,8 @@ class Review extends Model
         return $this->hasOne(ReviewModeration::class);
     }
 
-    // protected static function newFactory(): ReviewFactory
-    // {
-    //     // return ReviewFactory::new();
-    // }
+    protected static function newFactory()
+    {
+        return \Modules\Reaction\database\factories\ReviewFactory::new();
+    }
 }

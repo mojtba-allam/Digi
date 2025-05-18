@@ -19,10 +19,10 @@ class Wishlist extends Model
         'name',
     ];
 
-    // protected static function newFactory(): WishlistFactory
-    // {
-    //     // return WishlistFactory::new();
-    // }
+    protected static function newFactory()
+    {
+        return \Modules\List\database\factories\WishlistFactory::new();
+    }
 
     /**
      * Get the items for the wishlist.
