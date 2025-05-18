@@ -7,10 +7,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Modules\Authorization\app\Models\User;
-use Modules\PromotionAndCoupon\Models\Coupon;
+use \Modules\PromotionAndCoupon\app\Models\Coupon;
 use Modules\Product\app\Models\Product;
 
-// use Modules\Cart\Database\Factories\CartFactory;
 
 class Cart extends Model
 {
@@ -36,8 +35,8 @@ class Cart extends Model
         return $this->belongsToMany(Product::class);
     }
 
-    // protected static function newFactory(): CartFactory
-    // {
-    //     // return CartFactory::new();
-    // }
+    protected static function newFactory()
+    {
+         return \Modules\Cart\Database\factories\CartFactory::new();
+    }
 }
