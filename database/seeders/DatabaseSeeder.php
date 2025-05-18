@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
             \Modules\List\database\seeders\ListDatabaseSeeder::class,
             \Modules\SearchAndFiltering\database\seeders\SearchAndFilteringDatabaseSeeder::class,
             \Modules\AnalyticsAndReporting\database\seeders\AnalyticsAndReportingDatabaseSeeder::class,
+            \Modules\Cart\database\seeders\DatabaseSeeder::class,
+
         ]);
     }
 }
