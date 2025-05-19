@@ -37,6 +37,6 @@ class Cart extends Model
 
     protected static function newFactory()
     {
-         return \Modules\Cart\Database\factories\CartFactory::new();
+         return \Modules\Cart\database\factories\CartFactory::new();
     }
 }
