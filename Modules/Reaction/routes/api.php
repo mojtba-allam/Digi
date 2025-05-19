@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Modules\Reaction\app\Http\Controllers\ReviewController;
+use Modules\Reaction\app\Http\Controllers\RatingController;
 
-Route::prefix('api')->group(function () {
-    Route::get('/', function () {
-        return response()->json(['module' => 'Reaction']);
-    });
-});
+
+
+Route::apiResource('reviews', ReviewController::class);
+
+Route::apiResource('ratings', RatingController::class);

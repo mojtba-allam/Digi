@@ -10,6 +10,7 @@ class ReactionDatabaseSeeder extends Seeder
     {
         $this->call([
             ReviewDatabaseSeeder::class,
+            RatingDatabaseSeeder::class,
         ]);
     }
 }
