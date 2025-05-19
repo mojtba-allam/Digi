@@ -1,3 +1,7 @@
 {
-    "name": "Reaction"
+    "name": "Reaction",
+    "providers": [
+        "Modules\\Reaction\\app\\Providers\\ReactionServiceProvider",
+        "Modules\\Reaction\\app\\Providers\\RouteServiceProvider"
+    ]
 }
