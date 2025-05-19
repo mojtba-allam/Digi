@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Cart\Database\Factories;
+namespace Modules\Cart\database\factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Authorization\app\Models\User;
@@ -19,7 +19,7 @@ class CartFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => User::factory(),
+            'user_id' => $this->faker->numberBetween(1, 100), // Just use random numbers
         ];
     }
 }

@@ -2,8 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,7 +18,10 @@ class DatabaseSeeder extends Seeder
             \Modules\SearchAndFiltering\database\seeders\SearchAndFilteringDatabaseSeeder::class,
             \Modules\AnalyticsAndReporting\database\seeders\AnalyticsAndReportingDatabaseSeeder::class,
             \Modules\Cart\database\seeders\DatabaseSeeder::class,
-
+            \Modules\Category\database\seeders\DatabaseSeeder::class,
+            \Modules\CommissionAndPayout\database\seeders\DatabaseSeeder::class,
+            \Modules\Order\database\seeders\DatabaseSeeder::class,
+            \Modules\Payment\database\seeders\DatabaseSeeder::class,
         ]);
     }
 }
