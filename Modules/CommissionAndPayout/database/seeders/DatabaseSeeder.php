@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Cart\database\seeders;
+namespace Modules\CommissionAndPayout\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -15,9 +15,9 @@ class DatabaseSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
 
         $this->call([
-            CartSeeder::class,
-            CartItemSeeder::class,
-            CartCouponSeeder::class,
+            PayoutSeeder::class,
+            CommissionSeeder::class,
+            SettlementSeeder::class,
         ]);
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1');
