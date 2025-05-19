@@ -28,6 +28,12 @@ class Review extends Model
         return $this->hasOne(ReviewModeration::class);
     }
 
+    public function rating(): HasOne
+    {
+        return $this->hasOne(Rating::class);
+    }
+
+
     protected static function newFactory()
     {
         return \Modules\Reaction\database\factories\ReviewFactory::new();

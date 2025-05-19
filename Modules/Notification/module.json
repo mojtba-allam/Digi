@@ -1,3 +1,7 @@
 {
-    "name": "Notification"
+    "name": "Notification",
+    "providers": [
+        "Modules\\Notification\\app\\Providers\\NotificationServiceProvider",
+        "Modules\\Notification\\app\\Providers\\RouteServiceProvider"
+    ]
 }

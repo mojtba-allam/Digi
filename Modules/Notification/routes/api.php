@@ -1,9 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Modules\Notification\app\Http\Controllers\NotificationController;
 
-Route::prefix('api')->group(function () {
-    Route::get('/', function () {
-        return response()->json(['module' => 'Notification']);
-    });
-});
+        Route::apiResource('notifications', NotificationController::class);
