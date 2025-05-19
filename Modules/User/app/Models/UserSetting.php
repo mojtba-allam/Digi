@@ -5,7 +5,7 @@ namespace Modules\User\app\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Modules\Authorization\Models\User;
+use Modules\Authorization\app\Models\User;
 
 // use Modules\User\Database\Factories\UserSettingFactory;
 
