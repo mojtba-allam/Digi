@@ -5,8 +5,7 @@ namespace Modules\PromotionAndCoupon\app\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-
-// use Modules\PromotionAndCoupon\Database\Factories\DiscountRulesFactory;
+use Modules\PromotionAndCoupon\database\factories\DiscountRuleFactory;
 
 class DiscountRule extends Model
 {
@@ -22,8 +21,8 @@ class DiscountRule extends Model
         return $this->belongsTo(Promotion::class);
     }
 
-    // protected static function newFactory(): DiscountRulesFactory
-    // {
-    //     // return DiscountRulesFactory::new();
-    // }
+    protected static function newFactory(): DiscountRuleFactory
+    {
+        return DiscountRuleFactory::new();
+    }
 }

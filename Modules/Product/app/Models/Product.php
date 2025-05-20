@@ -14,6 +14,7 @@ use Modules\Category\app\Models\Category;
 use Modules\Category\app\Models\Collection;
 use Modules\List\app\Models\Wishlist;
 use Modules\Order\app\Models\OrderItem;
+use Modules\Product\database\factories\ProductFactory;
 use Modules\Reaction\app\Models\Review;
 
 // use Modules\Product\Database\Factories\ProductFactory;
@@ -82,8 +83,8 @@ class Product extends Model
         return $this->belongsToMany(Cart::class);
     }
 
-    // protected static function newFactory(): ProductFactory
-    // {
-    //     // return ProductFactory::new();
-    // }
+    protected static function newFactory(): ProductFactory
+    {
+        return ProductFactory::new();
+    }
 }

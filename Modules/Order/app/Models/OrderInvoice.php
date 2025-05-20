@@ -5,6 +5,7 @@ namespace Modules\Order\app\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Modules\Order\database\factories\OrderInvoiceFactory;
 
 // use Modules\Order\Database\Factories\OrderInvoiceFactory;
 
@@ -22,8 +23,8 @@ class OrderInvoice extends Model
         return $this->belongsTo(Order::class);
     }
 
-    // protected static function newFactory(): OrderInvoiceFactory
-    // {
-    //     // return OrderInvoiceFactory::new();
-    // }
+    protected static function newFactory(): OrderInvoiceFactory
+    {
+        return OrderInvoiceFactory::new();
+    }
 }

@@ -10,11 +10,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Modules\Business\app\Models\Vendor;
 use Modules\CommissionAndPayout\app\Models\Commission;
+use Modules\Order\database\factories\OrderFactory;
 use Modules\Payment\app\Models\Payment;
 use Modules\Authorization\app\Models\User;
-use Modules\Order\app\Models\OrderStatus;
-use Modules\Order\app\Models\OrderInvoice;
-use Modules\Order\app\Models\OrderItem;
 
 // use Modules\Order\Database\Factories\OrderFactory;
 
@@ -62,8 +60,8 @@ class Order extends Model
         return $this->hasMany(OrderItem::class);
     }
 
-    // protected static function newFactory(): OrderFactory
-    // {
-    //     // return OrderFactory::new();
-    // }
+    protected static function newFactory(): OrderFactory
+    {
+        return OrderFactory::new();
+    }
 }

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\Order\app\Models\ReturnRequest;
+use Modules\Product\database\factories\ProductVariantFactory;
 
 // use Modules\Product\Database\Factories\ProductVariantFactory;
 
@@ -40,8 +41,8 @@ class ProductVariant extends Model
         return $this->belongsToMany(ProductAttribute::class);
     }
 
-    // protected static function newFactory(): ProductVariantFactory
-    // {
-    //     // return ProductVariantFactory::new();
-    // }
+    protected static function newFactory(): ProductVariantFactory
+    {
+        return ProductVariantFactory::new();
+    }
 }

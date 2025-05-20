@@ -5,6 +5,7 @@ namespace Modules\Payment\app\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Modules\Payment\database\factories\RefundFactory;
 
 // use Modules\Payment\Database\Factories\RefundsFactory;
 
@@ -22,8 +23,8 @@ class Refund extends Model
         return $this->belongsTo(Payment::class);
     }
 
-    // protected static function newFactory(): RefundsFactory
-    // {
-    //     // return RefundsFactory::new();
-    // }
+    protected static function newFactory(): RefundFactory
+    {
+        return RefundFactory::new();
+    }
 }

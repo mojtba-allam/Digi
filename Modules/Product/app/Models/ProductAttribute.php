@@ -6,8 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Modules\Product\app\Models\ProductVariant;
-use Modules\Product\app\Models\Product;
+use Modules\Product\database\factories\ProductAttributeFactory;
 
 // use Modules\Product\Database\Factories\ProductAttributeFactory;
 
@@ -30,8 +29,8 @@ class ProductAttribute extends Model
         return $this->belongsTo(Product::class);
     }
 
-    // protected static function newFactory(): ProductAttributeFactory
-    // {
-    //     // return ProductAttributeFactory::new();
-    // }
+    protected static function newFactory(): ProductAttributeFactory
+    {
+        return ProductAttributeFactory::new();
+    }
 }
