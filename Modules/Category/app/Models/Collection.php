@@ -5,7 +5,7 @@ namespace Modules\Category\app\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Modules\Category\Database\Factories\CollectionFactory;
+use Modules\Category\database\factories\CollectionFactory;
 use Modules\Product\app\Models\Product;
 
 // use Modules\Category\Database\Factories\CollectionFactory;

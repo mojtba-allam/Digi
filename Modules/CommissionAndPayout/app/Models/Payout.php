@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Business\app\Models\Vendor;
+use Modules\CommissionAndPayout\database\factories\PayoutFactory;
 
 // use Modules\CommissionAndPayout\Database\Factories\PayoutFactory;
 
@@ -23,8 +24,8 @@ class Payout extends Model
         return $this->belongsTo(Vendor::class);
     }
 
-    // protected static function newFactory(): PayoutFactory
-    // {
-    //     // return PayoutFactory::new();
-    // }
+    protected static function newFactory(): PayoutFactory
+    {
+        return PayoutFactory::new();
+    }
 }

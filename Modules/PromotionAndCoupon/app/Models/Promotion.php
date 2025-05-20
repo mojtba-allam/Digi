@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\Product\app\Models\ProductMedia;
+use Modules\PromotionAndCoupon\database\factories\PromotionFactory;
 
-// use Modules\PromotionAndCoupon\Database\Factories\PromotionFactory;
 
 class Promotion extends Model
 {
@@ -30,8 +30,8 @@ class Promotion extends Model
 
 
 
-    // protected static function newFactory(): PromotionFactory
-    // {
-    //     // return PromotionFactory::new();
-    // }
+    protected static function newFactory(): PromotionFactory
+    {
+        return PromotionFactory::new();
+    }
 }

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Business\app\Models\Vendor;
+use Modules\CommissionAndPayout\database\factories\SettlementFactory;
 
 class Settlement extends Model
 {
@@ -21,8 +22,8 @@ class Settlement extends Model
         return $this->belongsTo(Vendor::class);
     }
 
-    // protected static function newFactory(): SettlementFactory
-    // {
-    //     // return SettlementFactory::new();
-    // }
+    protected static function newFactory(): SettlementFactory
+    {
+        return SettlementFactory::new();
+    }
 }

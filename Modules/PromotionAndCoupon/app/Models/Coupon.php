@@ -5,8 +5,8 @@ namespace Modules\PromotionAndCoupon\app\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\Cart\app\Models\Cart;
+use Modules\PromotionAndCoupon\database\factories\CouponFactory;
 
 // use Modules\PromotionAndCoupon\Database\Factories\CouponFactory;
 
@@ -24,8 +24,8 @@ class Coupon extends Model
         return $this->belongsToMany(Cart::class);
     }
 
-    // protected static function newFactory(): CouponFactory
-    // {
-    //     // return CouponFactory::new();
-    // }
+    protected static function newFactory(): CouponFactory
+    {
+        return CouponFactory::new();
+    }
 }

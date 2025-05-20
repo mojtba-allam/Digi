@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\ContentManagement\app\Models\Media;
+use Modules\Product\database\factories\ProductMediaFactory;
 use Modules\PromotionAndCoupon\app\Models\Promotion;
 
 // use Modules\Product\Database\Factories\ProductMediaFactory;
@@ -39,8 +40,8 @@ class ProductMedia extends Model
         return $this->belongsTo(Media::class);
     }
 
-    // protected static function newFactory(): ProductMediaFactory
-    // {
-    //     // return ProductMediaFactory::new();
-    // }
+    protected static function newFactory(): ProductMediaFactory
+    {
+        return ProductMediaFactory::new();
+    }
 }
