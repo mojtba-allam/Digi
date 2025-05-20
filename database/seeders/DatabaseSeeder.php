@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
             \Modules\CommissionAndPayout\database\seeders\DatabaseSeeder::class,
             \Modules\Order\database\seeders\DatabaseSeeder::class,
             \Modules\Payment\database\seeders\DatabaseSeeder::class,
+            \Modules\Product\database\seeders\DatabaseSeeder::class,
+            \Modules\PromotionAndCoupon\database\seeders\DatabaseSeeder::class,
         ]);
     }
 }
