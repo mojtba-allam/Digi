@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Modules\Authorization\app\Models\User;
+use Modules\Cart\database\factories\CartFactory;
 use \Modules\PromotionAndCoupon\app\Models\Coupon;
 use Modules\Product\app\Models\Product;
 
@@ -35,8 +36,8 @@ class Cart extends Model
         return $this->belongsToMany(Product::class);
     }
 
-    protected static function newFactory()
+    protected static function newFactory(): CartFactory
     {
-         return \Modules\Cart\database\factories\CartFactory::new();
+         return CartFactory::new();
     }
 }

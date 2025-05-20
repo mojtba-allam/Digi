@@ -5,6 +5,7 @@ namespace Modules\Payment\app\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Modules\Payment\database\factories\TransactionFactory;
 
 // use Modules\Payment\Database\Factories\TransactionsFactory;
 
@@ -22,8 +23,8 @@ class transaction extends Model
         return $this->belongsTo(Payment::class);
     }
 
-    // protected static function newFactory(): TransactionsFactory
-    // {
-    //     // return TransactionsFactory::new();
-    // }
+    protected static function newFactory(): TransactionFactory
+    {
+        return TransactionFactory::new();
+    }
 }

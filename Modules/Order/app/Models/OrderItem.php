@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Modules\Order\database\factories\OrderItemFactory;
 use Modules\Product\app\Models\Product;
 
 
@@ -35,8 +36,8 @@ class OrderItem extends Model
         return $this->hasMany(ReturnRequest::class);
     }
 
-    // protected static function newFactory(): OrderItemFactory
-    // {
-    //     // return OrderItemFactory::new();
-    // }
+    protected static function newFactory(): OrderItemFactory
+    {
+        return OrderItemFactory::new();
+    }
 }

@@ -5,6 +5,7 @@ namespace Modules\Order\app\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Modules\Order\database\factories\OrderStatusFactory;
 
 // use Modules\Order\Database\Factories\OrderStatuFactory;
 
@@ -22,8 +23,8 @@ class OrderStatus extends Model
         return $this->belongsTo(Order::class);
     }
 
-    // protected static function newFactory(): OrderStatuFactory
-    // {
-    //     // return OrderStatuFactory::new();
-    // }
+    protected static function newFactory(): OrderStatusFactory
+    {
+        return OrderStatusFactory::new();
+    }
 }

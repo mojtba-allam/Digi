@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Business\app\Models\Vendor;
+use Modules\Order\database\factories\ReturnRequestFactory;
 use Modules\Product\app\Models\ProductVariant;
 
 // use Modules\Order\Database\Factories\ReturnRequestFactory;
@@ -34,8 +35,8 @@ class ReturnRequest extends Model
         return $this->belongsTo(ProductVariant::class);
     }
 
-    // protected static function newFactory(): ReturnRequestFactory
-    // {
-    //     // return ReturnRequestFactory::new();
-    // }
+    protected static function newFactory(): ReturnRequestFactory
+    {
+        return ReturnRequestFactory::new();
+    }
 }

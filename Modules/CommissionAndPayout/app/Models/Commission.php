@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Business\app\Models\Vendor;
+use Modules\CommissionAndPayout\database\factories\CommissionFactory;
 use Modules\Order\app\Models\Order;
 
 // use Modules\CommissionAndPayout\Database\Factories\CommissionFactory;
@@ -29,8 +30,8 @@ class Commission extends Model
         return $this->belongsTo(Order::class);
     }
 
-    // protected static function newFactory(): CommissionFactory
-    // {
-    //     // return CommissionFactory::new();
-    // }
+    protected static function newFactory(): CommissionFactory
+    {
+        return CommissionFactory::new();
+    }
 }
