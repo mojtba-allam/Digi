@@ -12,7 +12,7 @@ class ContentManagementDatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+
 
         $this->call([
             MediaSeeder::class,
@@ -20,6 +20,6 @@ class ContentManagementDatabaseSeeder extends Seeder
             BlogSeeder::class,
         ]);
 
-        DB::statement('SET FOREIGN_KEY_CHECKS=1');
+
     }
 }

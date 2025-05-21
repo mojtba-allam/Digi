@@ -19,7 +19,7 @@ class FaqFactory extends Factory
     {
         return [
             'question' => $this->faker->sentence(),
-            'answer' => $this->faker->paragraph(),
+            'answer' => $this->faker->realText(200),
         ];
     }
 }
