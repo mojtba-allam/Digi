@@ -3,6 +3,7 @@
 namespace Modules\Notification\database\factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Modules\Authorization\app\Models\User;
 use Modules\Notification\app\Models\NotificationSubscription;
 
 class NotificationSubscriptionFactory extends Factory
@@ -14,7 +15,7 @@ class NotificationSubscriptionFactory extends Factory
         return [
             'channel' => $this->faker->randomElement(['email', 'sms', 'push', 'in-app']),
             'status' => $this->faker->randomElement(['active', 'paused', 'unsubscribed']),
-            'user_id' => $this->faker->numberBetween(1, 100), // Just use random numbers
+            'user_id' => User::factory(),
         ];
     }
 }
