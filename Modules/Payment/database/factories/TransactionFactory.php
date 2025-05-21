@@ -5,6 +5,8 @@ namespace Modules\Payment\Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Payment\app\Models\Payment;
 use Modules\Payment\app\Models\Transaction;
+use Illuminate\Support\Str;
+
 
 class TransactionFactory extends Factory
 {

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Modules\Category\database\factories\CollectionFactory;
 use Modules\Product\app\Models\Product;
 
-// use Modules\Category\Database\Factories\CollectionFactory;
+// use Modules\Category\database\factories\CollectionFactory;
 
 class Collection extends Model
 {

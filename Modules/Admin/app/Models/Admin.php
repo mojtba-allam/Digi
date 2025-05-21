@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\Authorization\app\Models\TemporaryPermission;
 use Modules\Authorization\app\Models\Role;
-// use Modules\Admin\Database\Factories\AdminFactory;
+use Modules\Admin\database\factories\AdminFactory;
 
 class Admin extends Model
 {
@@ -30,4 +30,8 @@ class Admin extends Model
         return $this->hasMany(TemporaryPermission::class);
     }
 
+    protected static function newFactory(): AdminFactory
+    {
+        return AdminFactory::new();
+    }
 }

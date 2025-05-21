@@ -9,7 +9,7 @@ use Modules\Business\app\Models\Vendor;
 use Modules\CommissionAndPayout\database\factories\CommissionFactory;
 use Modules\Order\app\Models\Order;
 
-// use Modules\CommissionAndPayout\Database\Factories\CommissionFactory;
+// use Modules\CommissionAndPayout\database\factories\CommissionFactory;
 
 class Commission extends Model
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\PromotionAndCoupon\Database\Seeders;
+namespace Modules\PromotionAndCoupon\database\seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;

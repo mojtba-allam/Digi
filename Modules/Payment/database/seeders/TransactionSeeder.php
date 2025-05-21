@@ -3,7 +3,7 @@
 namespace Modules\Payment\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Modules\Payment\app\Models\transaction;
+use Modules\Payment\app\Models\Transaction;
 
 class TransactionSeeder extends Seeder
 {
@@ -12,6 +12,6 @@ class TransactionSeeder extends Seeder
      */
     public function run(): void
     {
-        transaction::factory()->count(30)->create();
+        Transaction::factory()->count(30)->create();
     }
 }

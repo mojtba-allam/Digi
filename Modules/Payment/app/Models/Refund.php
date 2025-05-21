@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Payment\database\factories\RefundFactory;
 
-// use Modules\Payment\Database\Factories\RefundsFactory;
+// use Modules\Payment\database\factories\RefundsFactory;
 
 class Refund extends Model
 {

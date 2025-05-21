@@ -17,7 +17,7 @@ use Modules\Order\app\Models\OrderItem;
 use Modules\Product\database\factories\ProductFactory;
 use Modules\Reaction\app\Models\Review;
 
-// use Modules\Product\Database\Factories\ProductFactory;
+// use Modules\Product\database\factories\ProductFactory;
 
 class Product extends Model
 {

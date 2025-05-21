@@ -14,7 +14,7 @@ use Modules\Order\database\factories\OrderFactory;
 use Modules\Payment\app\Models\Payment;
 use Modules\Authorization\app\Models\User;
 
-// use Modules\Order\Database\Factories\OrderFactory;
+// use Modules\Order\database\factories\OrderFactory;
 
 class Order extends Model
 {

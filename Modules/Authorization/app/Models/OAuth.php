@@ -5,8 +5,7 @@ namespace Modules\Authorization\app\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Modules\Authorization\app\Models\User;
-// use Modules\Authorization\Database\Factories\OAuthFactory;
+use Modules\Authorization\database\factories\OAuthFactory;
 
 class OAuth extends Model
 {
@@ -25,8 +24,9 @@ class OAuth extends Model
     {
         return $this->belongsTo(User::class);
     }
-    // protected static function newFactory(): OAuthFactory
-    // {
-    //     // return OAuthFactory::new();
-    // }
+
+    protected static function newFactory(): OAuthFactory
+    {
+        return OAuthFactory::new();
+    }
 }

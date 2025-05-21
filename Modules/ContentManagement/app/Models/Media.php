@@ -6,8 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\Product\app\Models\ProductMedia;
-
-// use Modules\ContentManagement\Database\Factories\MediaFactory;
+use Modules\ContentManagement\database\factories\MediaFactory;
 
 class Media extends Model
 {
@@ -33,8 +32,8 @@ class Media extends Model
         return $this->hasMany(ProductMedia::class);
     }
 
-    // protected static function newFactory(): MediaFactory
-    // {
-    //     // return MediaFactory::new();
-    // }
+    protected static function newFactory(): MediaFactory
+    {
+        return MediaFactory::new();
+    }
 }

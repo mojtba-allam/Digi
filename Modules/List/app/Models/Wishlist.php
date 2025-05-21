@@ -5,7 +5,7 @@ namespace Modules\List\app\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-// use Modules\List\Database\Factories\WishlistFactory;
+// use Modules\List\database\factories\WishlistFactory;
 
 class Wishlist extends Model
 {

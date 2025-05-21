@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Authorization\app\Models\User;
+use Modules\CustomerSupport\database\factories\ChatFactory;
 
 class Chat extends Model
 {
@@ -35,8 +36,8 @@ class Chat extends Model
      */
     public $timestamps = false;
 
-    // protected static function newFactory(): ChatFactory
-    // {
-    //     // return ChatFactory::new();
-    // }
+    protected static function newFactory(): ChatFactory
+    {
+        return ChatFactory::new();
+    }
 }

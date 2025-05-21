@@ -3,7 +3,7 @@
 namespace Modules\Authorization\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Modules\Authorization\App\Models\Permission;
+use Modules\Authorization\app\Models\Permission;
 
 class PermissionSeeder extends Seeder
 {

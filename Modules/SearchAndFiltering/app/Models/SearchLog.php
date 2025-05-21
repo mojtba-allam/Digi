@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Authorization\app\Models\User;
-// use Modules\SearchAndFiltering\Database\Factories\SearchLogFactory;
+use Modules\SearchAndFiltering\database\factories\SearchLogFactory;
+
 
 class SearchLog extends Model
 {
@@ -28,9 +29,9 @@ class SearchLog extends Model
         return $this->belongsTo(User::class);
     }
 
-    protected static function newFactory()
+    protected static function newFactory(): SearchLogFactory
     {
-        return \Modules\SearchAndFiltering\database\factories\SearchLogFactory::new();
+        return SearchLogFactory::new();
     }
 
 

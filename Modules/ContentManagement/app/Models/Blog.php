@@ -4,8 +4,7 @@ namespace Modules\ContentManagement\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Modules\ContentManagement\app\Models\Media;
-// use Modules\ContentManagement\Database\Factories\BlogFactory;
+use Modules\ContentManagement\database\factories\BlogFactory;
 
 class Blog extends Model
 {
@@ -21,8 +20,8 @@ class Blog extends Model
         return $this->belongsTo(Media::class);
     }
 
-    // protected static function newFactory(): BlogFactory
-    // {
-    //     // return BlogFactory::new();
-    // }
+    protected static function newFactory(): BlogFactory
+    {
+        return BlogFactory::new();
+    }
 }
