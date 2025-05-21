@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('type');
-            $table->json('body');
+            $table->longText('body');
             $table->timestamp('exported_at')->nullable();
         });
     }

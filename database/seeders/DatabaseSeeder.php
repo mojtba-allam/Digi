@@ -104,6 +104,7 @@ class DatabaseSeeder extends Seeder
             \Modules\CommissionAndPayout\database\seeders\CommissionSeeder::class,
             \Modules\CommissionAndPayout\database\seeders\PayoutSeeder::class,
             \Modules\Business\database\seeders\VendorCommissionSeeder::class,
+            \Modules\CommissionAndPayout\database\seeders\SettlementSeeder::class,
         ]);
 
         // 7. Reviews and ratings
