@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\CommissionAndPayout\Database\Seeders;
+namespace Modules\CommissionAndPayout\database\seeders;
 
 use Illuminate\Database\Seeder;
 use Modules\CommissionAndPayout\app\Models\Settlement;
