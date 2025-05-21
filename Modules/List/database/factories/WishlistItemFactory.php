@@ -5,6 +5,7 @@ namespace Modules\List\database\factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\List\app\Models\WishlistItem;
 use Modules\List\app\Models\Wishlist;
+use Modules\Product\app\Models\Product;
 
 class WishlistItemFactory extends Factory
 {
@@ -13,7 +14,7 @@ class WishlistItemFactory extends Factory
     public function definition(): array
     {
         return [
-            'product_id' => $this->faker->numberBetween(1, 50), // Fake product IDs
+            'product_id' => Product::factory(), // Create a new product or use an existing one
             'wishlist_id' => Wishlist::factory(), // Create a new wishlist or use an existing one
         ];
     }

@@ -3,6 +3,7 @@
 namespace Modules\SearchAndFiltering\database\factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Modules\Authorization\app\Models\User;
 use Modules\SearchAndFiltering\app\Models\SearchLog;
 
 class SearchLogFactory extends Factory
@@ -13,7 +14,7 @@ class SearchLogFactory extends Factory
     {
         return [
             'query' => $this->faker->words(mt_rand(1, 4), true),
-            'user_id' => $this->faker->numberBetween(1, 100), // Fake user IDs
+            'user_id' => User::factory(), // Create a new user or use an existing one
         ];
     }
 }

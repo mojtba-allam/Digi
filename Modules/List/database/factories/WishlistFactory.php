@@ -4,6 +4,7 @@ namespace Modules\List\database\factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\List\app\Models\Wishlist;
+use Modules\Authorization\app\Models\User;
 
 class WishlistFactory extends Factory
 {
@@ -12,7 +13,7 @@ class WishlistFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => $this->faker->numberBetween(1, 100), // Fake user IDs
+            'user_id' => User::factory(),
             'name' => $this->faker->words(2, true), // e.g., "birthday gifts"
         ];
     }

@@ -23,7 +23,7 @@ class ProductFactory extends Factory
             'description' => $this->faker->sentence(10),
             'price' => $this->faker->randomFloat(2, 1, 1000),
             'stock' => $this->faker->numberBetween(0, 1000),
-            'status' => $this->faker->randomElement(['active', 'inactive', 'out_of_stock']),
+            'status' => $this->faker->randomElement(['active', 'inactive', 'out_of_stock','pending']),
             'vendor_id' => Vendor::factory(),
         ];
     }

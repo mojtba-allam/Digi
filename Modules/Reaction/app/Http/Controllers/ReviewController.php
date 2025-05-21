@@ -37,8 +37,7 @@ class ReviewController extends Controller
     public function store(StoreReviewRequest $request)
     {
         $review = $this->reviews->create($request->validated());
-
-        return $this->successResponse(new ReviewResource($review),
+        return $this->successResponse(
         __('reaction::messages.review.created'), 201);
     }
 

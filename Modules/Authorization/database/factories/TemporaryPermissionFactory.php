@@ -3,7 +3,10 @@
 namespace Modules\Authorization\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Modules\Admin\app\Models\Admin;
 use Modules\Authorization\App\Models\TemporaryPermission;
+use Modules\Authorization\App\Models\Permission;
+use Modules\Authorization\App\Models\Role;
 
 class TemporaryPermissionFactory extends Factory
 {
@@ -18,12 +21,12 @@ class TemporaryPermissionFactory extends Factory
     public function definition(): array
     {
         return [
-            'admin_id' => $this->faker->numberBetween(1, 10),
+            'admin_id' => Admin::factory(),
             'granted_at' => $this->faker->dateTime(),
-            'role_id' => \Modules\Authorization\App\Models\Role::factory(),
+            'role_id' => Role::factory(),
             'expires_at' => $this->faker->dateTimeBetween('+1 week', '+1 month'),
             'condition' => $this->faker->sentence(),
-            'permission_id' => \Modules\Authorization\App\Models\Permission::factory(),
+            'permission_id' => Permission::factory(),
         ];
     }
 }
