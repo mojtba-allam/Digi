@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\Order\app\Models\ReturnRequest;
 use Modules\Product\database\factories\ProductVariantFactory;
 
-// use Modules\Product\Database\Factories\ProductVariantFactory;
+// use Modules\Product\database\factories\ProductVariantFactory;
 
 class ProductVariant extends Model
 {

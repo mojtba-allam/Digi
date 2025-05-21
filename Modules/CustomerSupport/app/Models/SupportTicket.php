@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Authorization\app\Models\User;
+use Modules\CustomerSupport\database\factories\SupportTicketFactory;
 
 class SupportTicket extends Model
 {
@@ -29,8 +30,9 @@ class SupportTicket extends Model
     {
         return $this->belongsTo(User::class);
     }
-    // protected static function newFactory(): SupportTicketFactory
-    // {
-    //     // return SupportTicketFactory::new();
-    // }
+
+    protected static function newFactory(): SupportTicketFactory
+    {
+        return SupportTicketFactory::new();
+    }
 }

@@ -9,7 +9,7 @@ use Modules\ContentManagement\app\Models\Media;
 use Modules\Product\database\factories\ProductMediaFactory;
 use Modules\PromotionAndCoupon\app\Models\Promotion;
 
-// use Modules\Product\Database\Factories\ProductMediaFactory;
+// use Modules\Product\database\factories\ProductMediaFactory;
 
 class ProductMedia extends Model
 {

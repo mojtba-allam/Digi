@@ -10,7 +10,7 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void {
-        Schema::create('product_categories', function (Blueprint $table) {
+        Schema::create('product_category', function (Blueprint $table) {
             $table->string('relationship_type');
             $table->integer('relationship_strength');
             $table->foreignId('category_id')->constrained()->onDelete('cascade')->onUpdate('cascade');

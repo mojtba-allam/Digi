@@ -5,12 +5,13 @@ namespace Modules\Authorization\app\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Modules\Authorization\app\Models\User;
-// use Modules\Authorization\Database\Factories\PasswordResetFactory;
+use Modules\Authorization\database\factories\PasswordResetFactory;
 
 class PasswordReset extends Model
 {
     use HasFactory;
+    public $timestamps = false;
+
 
     /**
      * The attributes that are mass assignable.
@@ -24,8 +25,9 @@ class PasswordReset extends Model
     {
         return $this->belongsTo(User::class);
     }
-    // protected static function newFactory(): PasswordResetFactory
-    // {
-    //     // return PasswordResetFactory::new();
-    // }
+
+    protected static function newFactory(): PasswordResetFactory
+    {
+        return PasswordResetFactory::new();
+    }
 }

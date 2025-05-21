@@ -3,6 +3,7 @@
 namespace Modules\Product\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Modules\Product\app\Models\Product;
 use Modules\Product\app\Models\ProductAttribute;
 
 class ProductSeeder extends Seeder
@@ -12,6 +13,6 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
-        ProductAttribute::factory()->count(30)->create();
+        Product::factory()->count(30)->create();
     }
 }

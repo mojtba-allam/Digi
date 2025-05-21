@@ -4,7 +4,7 @@ namespace Modules\CustomerSupport\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-// use Modules\CustomerSupport\Database\Factories\FaqFactory;
+use Modules\CustomerSupport\database\factories\FaqFactory;
 
 class Faq extends Model
 {
@@ -18,8 +18,8 @@ class Faq extends Model
         'answer',
     ];
 
-    // protected static function newFactory(): FaqFactory
-    // {
-    //     // return FaqFactory::new();
-    // }
+    protected static function newFactory(): FaqFactory
+    {
+        return FaqFactory::new();
+    }
 }

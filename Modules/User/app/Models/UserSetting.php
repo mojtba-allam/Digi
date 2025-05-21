@@ -6,8 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Authorization\app\Models\User;
-
-// use Modules\User\Database\Factories\UserSettingFactory;
+use Modules\User\database\factories\UserSettingFactory;
 
 
 class UserSetting extends Model
@@ -19,5 +18,10 @@ class UserSetting extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    protected static function newFactory(): UserSettingFactory
+    {
+        return UserSettingFactory::new();
     }
 }

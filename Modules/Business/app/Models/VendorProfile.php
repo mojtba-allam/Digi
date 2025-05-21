@@ -4,8 +4,7 @@ namespace Modules\Business\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-// use Modules\Business\Database\Factories\VendorProfileFactory;
+use Modules\Business\database\factories\VendorProfileFactory;
 
 class VendorProfile extends Model
 {
@@ -20,5 +19,10 @@ class VendorProfile extends Model
     public function vendor()
     {
         return $this->belongsTo(Vendor::class);
+    }
+
+    protected static function newFactory(): VendorProfileFactory
+    {
+        return VendorProfileFactory::new();
     }
 }

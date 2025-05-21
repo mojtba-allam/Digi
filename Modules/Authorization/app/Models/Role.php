@@ -5,11 +5,8 @@ namespace Modules\Authorization\app\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\Admin\app\Models\Admin;
-use Modules\Authorization\app\Models\Permission;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Modules\Authorization\app\Models\TemporaryPermission;
-// use Modules\Authorization\Database\Factories\RoleFactory;
+use Modules\Authorization\database\factories\RoleFactory;
 
 class Role extends Model
 {
@@ -33,5 +30,10 @@ class Role extends Model
     public function temporary_permissions():HasMany
     {
         return $this->hasMany(TemporaryPermission::class);
+    }
+
+    protected static function newFactory(): RoleFactory
+    {
+        return RoleFactory::new();
     }
 }

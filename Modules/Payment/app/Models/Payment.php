@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\Order\app\Models\Order;
 use Modules\Payment\database\factories\PaymentFactory;
 
-// use Modules\Payment\Database\Factories\PaymentsFactory;
+// use Modules\Payment\database\factories\PaymentsFactory;
 
 class Payment extends Model
 {

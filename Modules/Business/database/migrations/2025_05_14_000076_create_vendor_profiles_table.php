@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('vendor_profiles', function (Blueprint $table) {
             $table->id();
             $table->string('tax_id');
-            $table->string('description');
+            $table->text('description');
             $table->foreignId('vendor_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });

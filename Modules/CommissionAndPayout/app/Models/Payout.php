@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Business\app\Models\Vendor;
 use Modules\CommissionAndPayout\database\factories\PayoutFactory;
 
-// use Modules\CommissionAndPayout\Database\Factories\PayoutFactory;
+// use Modules\CommissionAndPayout\database\factories\PayoutFactory;
 
 class Payout extends Model
 {

@@ -14,10 +14,8 @@ use Modules\CommissionAndPayout\app\Models\Payout;
 use Modules\CommissionAndPayout\app\Models\Settlement;
 use Modules\Product\app\Models\Product;
 use Modules\Order\app\Models\Order;
-use Modules\Business\app\Models\VendorProfile;
-use Modules\Business\app\Models\VendorCommission;
 use Modules\Order\app\Models\ReturnRequest;
-// use Modules\Business\Database\Factories\VendorFactory;
+use Modules\Business\database\factories\VendorFactory;
 
 class Vendor extends Model
 {
@@ -69,5 +67,10 @@ class Vendor extends Model
     public function payouts(): HasMany
     {
         return $this->hasMany(Payout::class);
+    }
+
+    protected static function newFactory(): VendorFactory
+    {
+        return VendorFactory::new();
     }
 }
