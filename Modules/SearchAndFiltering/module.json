@@ -1,3 +1,9 @@
 {
-    "name": "SearchAndFiltering"
+    "name": "SearchAndFiltering",
+    "alias": "searchandfiltering",
+    "description": "",
+    "providers": [
+        "Modules\\SearchAndFiltering\\app\\Providers\\RouteServiceProvider",
+        "Modules\\SearchAndFiltering\\app\\Providers\\SearchAndFilteringServiceProvider"
+    ]
 }

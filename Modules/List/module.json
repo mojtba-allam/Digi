@@ -1,3 +1,7 @@
 {
-    "name": "List"
+    "name": "List",
+    "providers": [
+        "Modules\\List\\app\\Providers\\ListServiceProvider",
+        "Modules\\List\\app\\Providers\\RouteServiceProvider"
+    ]
 }
