@@ -10,7 +10,7 @@ use Modules\Order\database\factories\OrderItemFactory;
 use Modules\Product\app\Models\Product;
 
 
-// use Modules\Order\Database\Factories\OrderItemFactory;
+// use Modules\Order\database\factories\OrderItemFactory;
 
 class OrderItem extends Model
 {

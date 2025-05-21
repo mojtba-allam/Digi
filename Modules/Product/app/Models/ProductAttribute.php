@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Modules\Product\database\factories\ProductAttributeFactory;
 
-// use Modules\Product\Database\Factories\ProductAttributeFactory;
+// use Modules\Product\database\factories\ProductAttributeFactory;
 
 class ProductAttribute extends Model
 {

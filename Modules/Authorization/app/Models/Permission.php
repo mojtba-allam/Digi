@@ -8,7 +8,9 @@ use Modules\Authorization\app\Models\Role;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\Authorization\app\Models\TemporaryPermission;
-// use Modules\Authorization\Database\Factories\PermissionFactory;
+use Modules\Authorization\database\factories\PermissionFactory;
+
+// use Modules\Authorization\database\factories\PermissionFactory;
 
 class Permission extends Model
 {
@@ -30,5 +32,8 @@ class Permission extends Model
         return $this->hasMany(TemporaryPermission::class);
     }
 
-
+    protected static function newFactory(): PermissionFactory
+    {
+        return PermissionFactory::new();
+    }
 }

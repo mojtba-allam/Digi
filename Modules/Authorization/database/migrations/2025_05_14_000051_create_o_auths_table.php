@@ -9,12 +9,13 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('vendor_orders', function (Blueprint $table) {
+        Schema::create('o_auths', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('vendor_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('order_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->string('provider');
+            $table->integer('provider_id');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('vendor_orders');
+        Schema::dropIfExists('oauth');
     }
 };

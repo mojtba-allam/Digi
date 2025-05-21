@@ -6,9 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Admin\app\Models\Admin;
-use Modules\Authorization\app\Models\Permission;
-use Modules\Authorization\app\Models\Role;
-// use Modules\Authorization\Database\Factories\TemporaryPermissionFactory;
+use Modules\Authorization\database\factories\TemporaryPermissionFactory;
 
 class TemporaryPermission extends Model
 {
@@ -32,6 +30,11 @@ class TemporaryPermission extends Model
     public function role():BelongsTo
     {
         return $this->belongsTo(Role::class);
+    }
+
+    protected static function newFactory(): TemporaryPermissionFactory
+    {
+        return TemporaryPermissionFactory::new();
     }
 }
 

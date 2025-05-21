@@ -1,9 +1,9 @@
 <?php
 
-namespace Modules\Admin\Database\Seeders;
+namespace Modules\Admin\database\seeders;
 
-use Database\Seeders\AdminSeeder;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class AdminDatabaseSeeder extends Seeder
 {
@@ -12,8 +12,12 @@ class AdminDatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+
         $this->call([
             AdminSeeder::class,
         ]);
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
     }
 }

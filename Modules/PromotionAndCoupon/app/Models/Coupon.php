@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Modules\Cart\app\Models\Cart;
 use Modules\PromotionAndCoupon\database\factories\CouponFactory;
 
-// use Modules\PromotionAndCoupon\Database\Factories\CouponFactory;
+// use Modules\PromotionAndCoupon\database\factories\CouponFactory;
 
 class Coupon extends Model
 {

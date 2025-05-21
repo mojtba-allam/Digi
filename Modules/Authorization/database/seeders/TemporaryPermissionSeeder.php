@@ -3,7 +3,7 @@
 namespace Modules\Authorization\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Modules\Authorization\App\Models\TemporaryPermission;
+use Modules\Authorization\app\Models\TemporaryPermission;
 
 class TemporaryPermissionSeeder extends Seeder
 {

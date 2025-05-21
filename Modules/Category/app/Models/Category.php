@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Modules\Category\database\factories\CategoryFactory;
 use Modules\Product\app\Models\Product;
 
-// use Modules\Category\Database\Factories\CategoryFactory;
+// use Modules\Category\database\factories\CategoryFactory;
 
 class Category extends Model
 {

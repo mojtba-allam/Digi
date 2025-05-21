@@ -10,9 +10,11 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void {
-        Schema::create('product_collections', function (Blueprint $table) {
+        Schema::create('product_brand', function (Blueprint $table) {
+            $table->string('relationship_type');
+            $table->integer('relationship_strength');
+            $table->foreignId('brand_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('product_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('collection_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -21,6 +23,6 @@ return new class extends Migration
      * Reverse the migrations.
      */
     public function down(): void {
-        Schema::dropIfExists('product_collections');
+        Schema::dropIfExists('product_brands');
     }
 };

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Modules\Authorization\Database\Seeders\AuthorizationDatabaseSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,6 +13,13 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
+            \Modules\Authorization\database\seeders\AuthorizationDatabaseSeeder::class,
+            \Modules\Admin\database\seeders\AdminDatabaseSeeder::class,
+            \Modules\Business\database\seeders\BusinessDatabaseSeeder::class,
+            \Modules\User\database\seeders\UserDatabaseSeeder::class,
+            \Modules\ContentManagement\database\seeders\ContentManagementDatabaseSeeder::class,
+            \Modules\CustomerSupport\database\seeders\CustomerSupportDatabaseSeeder::class,
+            \Modules\SearchAndFiltering\database\seeders\SearchAndFilteringDatabaseSeeder::class,
             \Modules\Reaction\database\seeders\ReactionDatabaseSeeder::class,
             \Modules\Notification\database\seeders\NotificationDatabaseSeeder::class,
             \Modules\List\database\seeders\ListDatabaseSeeder::class,

@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Payment\database\factories\TransactionFactory;
 
-// use Modules\Payment\Database\Factories\TransactionsFactory;
 
 class transaction extends Model
 {

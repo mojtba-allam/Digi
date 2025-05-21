@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Order\database\factories\OrderStatusFactory;
 
-// use Modules\Order\Database\Factories\OrderStatuFactory;
+// use Modules\Order\database\factories\OrderStatuFactory;
 
 class OrderStatus extends Model
 {

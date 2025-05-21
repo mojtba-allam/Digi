@@ -3,14 +3,14 @@
 namespace Modules\Authorization\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Modules\Authorization\App\Models\Oauth;
+use Modules\Authorization\app\Models\OAuth;
 
-class OauthFactory extends Factory
+class OAuthFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      */
-    protected $model = Oauth::class;
+    protected $model = OAuth::class;
 
     /**
      * Define the model's default state.

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Order\database\factories\OrderInvoiceFactory;
 
-// use Modules\Order\Database\Factories\OrderInvoiceFactory;
+// use Modules\Order\database\factories\OrderInvoiceFactory;
 
 class OrderInvoice extends Model
 {

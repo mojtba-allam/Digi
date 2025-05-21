@@ -3,7 +3,7 @@
 namespace Modules\Authorization\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Modules\Authorization\App\Models\PasswordReset;
+use Modules\Authorization\app\Models\PasswordReset;
 
 class PasswordResetSeeder extends Seeder
 {

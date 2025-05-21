@@ -4,8 +4,7 @@ namespace Modules\ContentManagement\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Modules\ContentManagement\app\Models\Media;
-// use Modules\ContentManagement\Database\Factories\PageFactory;
+use Modules\ContentManagement\database\factories\PageFactory;
 
 class Page extends Model
 {
@@ -21,8 +20,8 @@ class Page extends Model
         return $this->belongsTo(Media::class);
     }
 
-    // protected static function newFactory(): PageFactory
-    // {
-    //     // return PageFactory::new();
-    // }
+    protected static function newFactory(): PageFactory
+    {
+        return PageFactory::new();
+    }
 }

@@ -6,9 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
-use Modules\Authorization\app\Models\OAuth;
 use Modules\Cart\app\Models\Cart;
-use Modules\Authorization\app\Models\PasswordReset;
 use Modules\List\app\Models\Wishlist;
 use Modules\Order\app\Models\Order;
 use Modules\Notification\app\Models\Notification;
@@ -20,7 +18,7 @@ use Modules\CustomerSupport\app\Models\Chat;
 use Modules\User\app\Models\Address;
 use Modules\User\app\Models\UserSetting;
 use Modules\Reaction\app\Models\Review;
-// use Modules\Authorization\Database\Factories\UserFactory;
+use Modules\Authorization\database\factories\UserFactory;
 
 class User extends Model
 {
@@ -109,5 +107,10 @@ class User extends Model
     public function reviews():HasMany
     {
         return $this->hasMany(Review::class);
+    }
+
+    protected static function newFactory(): UserFactory
+    {
+        return UserFactory::new();
     }
 }
