@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+
 
         $this->call([
             PaymentSeeder::class,
@@ -20,6 +20,6 @@ class DatabaseSeeder extends Seeder
             TransactionSeeder::class,
         ]);
 
-        DB::statement('SET FOREIGN_KEY_CHECKS=1');
+
     }
 }

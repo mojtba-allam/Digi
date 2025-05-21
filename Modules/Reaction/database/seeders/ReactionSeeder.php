@@ -4,13 +4,13 @@ namespace Modules\Reaction\database\seeders;
 
 use Illuminate\Database\Seeder;
 
-class ReactionDatabaseSeeder extends Seeder
+class ReactionSeeder extends Seeder
 {
     public function run(): void
     {
         $this->call([
-            ReviewDatabaseSeeder::class,
-            RatingDatabaseSeeder::class,
+            ReviewSeeder::class,
+            RatingSeeder::class,
         ]);
     }
 }

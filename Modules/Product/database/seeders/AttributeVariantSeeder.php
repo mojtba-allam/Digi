@@ -21,6 +21,8 @@ class AttributeVariantSeeder extends Seeder
             DB::table('attribute_variant')->insert([
                 'product_variant_id' => $variants->random()->id,
                 'product_attribute_id' => $attributes->random()->id,
+                'created_at' => now(),
+                'updated_at' => now(),
             ]);
         }
     }

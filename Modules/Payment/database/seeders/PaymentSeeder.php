@@ -4,6 +4,7 @@ namespace Modules\Payment\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Modules\Payment\app\Models\Payment;
+use Modules\Order\app\Models\Order;
 
 class PaymentSeeder extends Seeder
 {
@@ -12,6 +13,19 @@ class PaymentSeeder extends Seeder
      */
     public function run(): void
     {
-        Payment::factory()->count(20)->create();
+        // Get existing orders from database
+        $orderIds = Order::pluck('id')->toArray();
+
+        if (empty($orderIds)) {
+            $this->command->warn('No orders found, skipping payment seeding');
+            return;
+        }
+
+        // Create one payment for each order
+        foreach ($orderIds as $orderId) {
+            Payment::factory()->create([
+                'order_id' => $orderId
+            ]);
+        }
     }
 }

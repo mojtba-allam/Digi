@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 use Modules\Reaction\app\Models\Review;
 use Modules\Reaction\app\Models\ReviewModeration;
 
-class ReviewDatabaseSeeder extends Seeder
+class ReviewSeeder extends Seeder
 {
     public function run(): void
     {
