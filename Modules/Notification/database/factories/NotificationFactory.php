@@ -4,6 +4,7 @@ namespace Modules\Notification\database\factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Notification\app\Models\Notification;
+use Modules\Authorization\app\Models\User;
 
 class NotificationFactory extends Factory
 {
@@ -15,7 +16,7 @@ class NotificationFactory extends Factory
             'title' => $this->faker->sentence(),
             'body' => $this->faker->sentence(),
             'read_at' => $this->faker->optional(0.3)->dateTimeBetween('-1 week', 'now'),
-            'user_id' => $this->faker->numberBetween(1, 100), // Just use random numbers
+            'user_id' => User::factory(),
         ];
     }
 }

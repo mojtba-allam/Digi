@@ -19,7 +19,7 @@ class CartFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => $this->faker->numberBetween(1, 100), // Just use random numbers
+            'user_id' => User::factory(),
         ];
     }
 }
