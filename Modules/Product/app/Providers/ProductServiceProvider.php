@@ -1,11 +1,16 @@
 <?php
 
-namespace Modules\Product\Providers;
+namespace Modules\Product\app\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
 class ProductServiceProvider extends ServiceProvider
 {
-    public function register() {}
-    public function boot() {}
+    public function register()
+    {
+    }
+
+    public function boot(): void
+    {
+    }
 }
