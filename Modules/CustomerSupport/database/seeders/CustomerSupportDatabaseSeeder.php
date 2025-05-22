@@ -3,7 +3,6 @@
 namespace Modules\CustomerSupport\database\seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class CustomerSupportDatabaseSeeder extends Seeder
 {
@@ -16,7 +15,6 @@ class CustomerSupportDatabaseSeeder extends Seeder
 
         $this->call([
             FaqSeeder::class,
-            SupportTicketSeeder::class,
             ChatSeeder::class,
         ]);
 
