@@ -15,7 +15,6 @@ class NotificationDatabaseSeeder extends Seeder
         $this->call([
             NotificationTemplateSeeder::class,
             NotificationSeeder::class,
-            NotificationSubscriptionSeeder::class,
         ]);
 
         // Re-enable foreign key constraints

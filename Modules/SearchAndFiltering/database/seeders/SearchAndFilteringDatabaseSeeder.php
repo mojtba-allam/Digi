@@ -14,7 +14,6 @@ class SearchAndFilteringDatabaseSeeder extends Seeder
 
         $this->call([
             FilterSeeder::class,
-            SearchLogSeeder::class,
         ]);
 
         // Re-enable foreign key constraints
