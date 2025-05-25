@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Modules\Order\app\Models\OrderItem;
 use Modules\Order\app\Models\ReturnRequest;
 use Modules\Product\database\factories\ProductVariantFactory;
 
@@ -39,6 +40,11 @@ class ProductVariant extends Model
     public function product_attribute(): BelongsToMany
     {
         return $this->belongsToMany(ProductAttribute::class);
+    }
+
+    public function order_items(): HasMany
+    {
+        return $this->hasMany(OrderItem::class);
     }
 
     protected static function newFactory(): ProductVariantFactory
