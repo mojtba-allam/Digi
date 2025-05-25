@@ -15,7 +15,7 @@ use Modules\Product\app\Models\Product;
 class Cart extends Model
 {
     use HasFactory;
-
+    protected $table = 'cart';
     /**
      * The attributes that are mass assignable.
      */
