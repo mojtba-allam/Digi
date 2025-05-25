@@ -39,9 +39,9 @@ class User extends Model
         return $this->hasMany(OAuth::class);
     }
 
-    public function carts():HasMany
+    public function cart(): HasOne
     {
-        return $this->hasMany(Cart::class);
+        return $this->hasOne(Cart::class);
     }
 
     public function password_resets():HasMany
