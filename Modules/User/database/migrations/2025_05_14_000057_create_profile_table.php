@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('vendor_profiles', function (Blueprint $table) {
+        Schema::create('profile', function (Blueprint $table) {
             $table->id();
-            $table->string('tax_id');
-            $table->text('description');
-            $table->foreignId('vendor_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->string('avatar');
+            $table->string('bio');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('vendor_profiles');
+        Schema::dropIfExists('profile');
     }
 };

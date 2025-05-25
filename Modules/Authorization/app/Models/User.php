@@ -11,11 +11,9 @@ use Modules\List\app\Models\Wishlist;
 use Modules\Order\app\Models\Order;
 use Modules\Notification\app\Models\Notification;
 use Modules\Business\app\Models\Vendor;
-use Modules\Notification\app\Models\NotificationSubscription;
-use Modules\SearchAndFiltering\app\Models\SearchLog;
-use Modules\CustomerSupport\app\Models\SupportTicket;
 use Modules\CustomerSupport\app\Models\Chat;
 use Modules\User\app\Models\Address;
+use Modules\User\app\Models\Profile;
 use Modules\User\app\Models\UserSetting;
 use Modules\Reaction\app\Models\Review;
 use Modules\Authorization\database\factories\UserFactory;
@@ -68,22 +66,6 @@ class User extends Model
     {
         return $this->hasMany(Vendor::class);
     }
-
-    public function notification_subscriptions():HasMany
-    {
-        return $this->hasMany(NotificationSubscription::class);
-    }
-
-    public function search_logs():HasMany
-    {
-        return $this->hasMany(SearchLog::class);
-    }
-
-    public function support_tickets():HasMany
-    {
-        return $this->hasMany(SupportTicket::class);
-    }
-
     public function chats():HasMany
     {
         return $this->hasMany(Chat::class);
@@ -107,6 +89,11 @@ class User extends Model
     public function reviews():HasMany
     {
         return $this->hasMany(Review::class);
+    }
+
+    public function profile() : HasOne
+    {
+        return $this->hasOne(Profile::class);
     }
 
     protected static function newFactory(): UserFactory
