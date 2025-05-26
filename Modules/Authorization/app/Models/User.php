@@ -103,4 +103,10 @@ class User extends Model
     {
         return UserFactory::new();
     }
+
+    public function oAuths(): MorphMany
+    {
+        return $this->morphMany(OAuth::class, 'authenticatable');
+    }
+
 }
