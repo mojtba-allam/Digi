@@ -5,6 +5,7 @@ namespace Modules\CustomerSupport\Database\factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Authorization\app\Models\User;
 use Modules\CustomerSupport\app\Models\Chat;
+use Modules\Admin\app\Models\Admin;
 
 class ChatFactory extends Factory
 {
@@ -18,10 +19,16 @@ class ChatFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            'message' => $this->faker->sentence(),
-            'sent_at' => $this->faker->dateTimeBetween('-1 month', 'now'),
-            'user_id' => User::factory(),
-        ];
+        $senderTypes = [User::class, Admin::class];
+    $senderType = $this->faker->randomElement($senderTypes);
+
+    $senderId = $senderType::inRandomOrder()->first()?->id ?? 1;
+
+    return [
+        'message' => $this->faker->sentence,
+        'sent_at' => now(),
+        'sender_id' => $senderId,
+        'sender_type' => $senderType,
+    ];
     }
 }
