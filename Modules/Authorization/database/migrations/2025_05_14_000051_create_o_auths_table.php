@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('provider');
             $table->integer('provider_id');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('authenticatable_id');
+            $table->string('authenticatable_type');
             $table->timestamps();
         });
     }

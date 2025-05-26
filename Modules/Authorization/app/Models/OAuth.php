@@ -5,6 +5,7 @@ namespace Modules\Authorization\app\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Modules\Authorization\database\factories\OAuthFactory;
 
 class OAuth extends Model
@@ -28,5 +29,9 @@ class OAuth extends Model
     protected static function newFactory(): OAuthFactory
     {
         return OAuthFactory::new();
+    }
+    public function authenticatable(): MorphTo
+    {
+        return $this->morphTo();
     }
 }
