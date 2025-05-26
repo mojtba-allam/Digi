@@ -11,6 +11,7 @@ use Modules\Authorization\app\Models\TemporaryPermission;
 use Modules\Authorization\app\Models\Role;
 use Modules\Admin\database\factories\AdminFactory;
 use Modules\CustomerSupport\app\Models\Chat;
+use Modules\Authorization\app\Models\OAuth;
 
 class Admin extends Model
 {
@@ -31,14 +32,19 @@ class Admin extends Model
     {
         return $this->hasMany(TemporaryPermission::class);
     }
+    public function chats():MorphMany
+    {
+        return $this->morphMany(Chat::class,'sender');
+    }
+
+    public function oAuths(): MorphMany
+    {
+        return $this->morphMany(OAuth::class, 'authenticatable');
+    }
 
     protected static function newFactory(): AdminFactory
     {
         return AdminFactory::new();
     }
 
-    protected function chats():MorphMany
-    {
-        return $this->morphMany(Chat::class,'sender');
-    }
 }
