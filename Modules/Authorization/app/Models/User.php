@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Modules\Cart\app\Models\Cart;
 use Modules\List\app\Models\Wishlist;
 use Modules\Order\app\Models\Order;
@@ -66,9 +67,9 @@ class User extends Model
     {
         return $this->hasMany(Vendor::class);
     }
-    public function chats():HasMany
+    public function chats():MorphMany
     {
-        return $this->hasMany(Chat::class);
+        return $this->morphMany(Chat::class,'sender');
     }
 
     public function addresses():HasMany
