@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('o_auths', function (Blueprint $table) {
             $table->id();
+            $table->morphs('user');
             $table->string('provider');
             $table->integer('provider_id');
-            $table->unsignedBigInteger('authenticatable_id');
-            $table->string('authenticatable_type');
+            
             $table->timestamps();
         });
     }

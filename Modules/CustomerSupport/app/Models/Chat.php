@@ -12,6 +12,7 @@ use Modules\CustomerSupport\database\factories\ChatFactory;
 class Chat extends Model
 {
     use HasFactory;
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
@@ -19,7 +20,8 @@ class Chat extends Model
     protected $fillable = [
         'message',
         'sent_at',
-        'user_id',
+        'sender_id',
+        'sender_type',
     ];
 
     /**
