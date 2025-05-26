@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('message');
             $table->timestamp('sent_at');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->morphs('sender');
         });
     }
 

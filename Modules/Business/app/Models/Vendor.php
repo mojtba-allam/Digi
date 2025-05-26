@@ -16,10 +16,12 @@ use Modules\Product\app\Models\Product;
 use Modules\Order\app\Models\Order;
 use Modules\Order\app\Models\ReturnRequest;
 use Modules\Business\database\factories\VendorFactory;
+use Illuminate\Notifications\Notifiable;
 
 class Vendor extends Model
 {
     use HasFactory;
+    use Notifiable;
 
     protected $fillable = [
         'user_id',
