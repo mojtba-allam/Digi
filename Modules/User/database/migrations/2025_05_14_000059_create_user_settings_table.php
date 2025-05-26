@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->string('privacy_settings');
             $table->boolean('notifications_enabled');
+            $table->json('notifications_subscription')->nullable();
             $table->timestamps();
         });
     }
