@@ -23,6 +23,7 @@ class OAuthFactory extends Factory
             'provider' => $this->faker->randomElement(['google', 'facebook', 'twitter']),
             'provider_id' => $this->faker->randomNumber(5, true),
             'user_id' =>User::factory(),
+            'user_type' => $this->faker->randomElement(['admin', 'vendor', 'customer', 'manager','support']),
         ];
     }
 }
