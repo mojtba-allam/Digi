@@ -22,61 +22,10 @@ class SearchController extends Controller
     {
         $this->searches = $searches;
     }
-
-    /**
-     * Display a listing of the resource.
-     */
-    public function index(Request $request)
-    {
-        $page = $this->searches->paginate((int)$request->input('per_page', 10));
-        return SearchResource::collection($page);
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreSearchRequest $request)
-    {
-        $searchLog = $this->searches->create($request->validated());
-
-        return $this->successResponse(new SearchResource($searchLog),
-            __('searchandfiltering::messages.search.created'), 201);
-    }
-
-    /**
-     * Show the specified resource.
-     */
-    public function show(SearchLog $searchLog)
-    {
-        return new SearchResource($searchLog);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateSearchRequest $request, SearchLog $searchLog)
-    {
-        $this->searches->update($searchLog, $request->validated());
-
-        return $this->successResponse(
-            __('searchandfiltering::messages.search.updated'), 200);
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(SearchLog $searchLog)
-    {
-        $this->searches->delete($searchLog);
-        return $this->successResponse(
-            __('searchandfiltering::messages.search.deleted'),
-            200
-        );
-    }
-
     /**
      * Search within the application.
      */
+    
     public function search(Request $request)
     {
         $request->validate([
