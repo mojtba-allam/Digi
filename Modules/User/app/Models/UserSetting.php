@@ -13,6 +13,10 @@ class UserSetting extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'notifications_subscription' => 'array',
+    ];
+
     protected $fillable = ['user_id', 'privacy_settings', 'notifications_enabled'];
 
     public function user(): BelongsTo

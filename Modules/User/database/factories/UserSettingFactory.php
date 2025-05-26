@@ -22,7 +22,7 @@ class UserSettingFactory extends Factory
             'user_id' => User::factory(),
             'privacy_settings' => $this->faker->randomElement(['public', 'private', 'friends-only']),
             'notifications_enabled' => $this->faker->boolean(),
-            'notifications_subscription' => $this->randomElement(['SMS', 'Email', 'WhatsApp', 'Telegram']),
+            'notifications_subscription' => [$this->faker->randomElement(['SMS', 'Email', 'WhatsApp', 'Telegram'])],
         ];
     }
 }

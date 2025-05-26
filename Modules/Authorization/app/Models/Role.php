@@ -15,7 +15,7 @@ class Role extends Model
     /**
      * The attributes that are mass assignable.
      */
-    protected $fillable = ['name','id'];
+    protected $fillable = ['role','id'];
 
     public function admins():HasMany
     {
