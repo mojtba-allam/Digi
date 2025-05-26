@@ -18,10 +18,12 @@ use Modules\User\app\Models\Profile;
 use Modules\User\app\Models\UserSetting;
 use Modules\Reaction\app\Models\Review;
 use Modules\Authorization\database\factories\UserFactory;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Model
 {
     use HasFactory;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -67,9 +69,9 @@ class User extends Model
     {
         return $this->hasMany(Vendor::class);
     }
-    public function chats():HasMany
+    public function chats():MorphMany
     {
-        return $this->hasMany(Chat::class);
+        return $this->morphMany(Chat::class,'sender');
     }
 
     public function addresses():HasMany

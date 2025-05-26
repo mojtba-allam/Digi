@@ -43,9 +43,6 @@ class SortController extends Controller
             'field' => 'required|string',
             'direction' => 'sometimes|string|in:asc,desc',
         ]);
-
-        // This is a simplified example; in practice you wouldn't
-        // receive a collection via API, but would use this within another controller
         $collection = collect($request->input('items', []));
 
         $sorted = $this->sort->sort(

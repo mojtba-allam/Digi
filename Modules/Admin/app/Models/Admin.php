@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Modules\Authorization\app\Models\OAuth;
 use Modules\Authorization\app\Models\TemporaryPermission;
 use Modules\Authorization\app\Models\Role;
 use Modules\Admin\database\factories\AdminFactory;
+use Modules\CustomerSupport\app\Models\Chat;
 
 class Admin extends Model
 {
@@ -37,8 +37,8 @@ class Admin extends Model
         return AdminFactory::new();
     }
 
-    public function oAuths(): MorphMany
+    protected function chats():MorphMany
     {
-        return $this->morphMany(OAuth::class, 'authenticatable');
+        return $this->morphMany(Chat::class,'sender');
     }
 }
