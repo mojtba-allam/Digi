@@ -4,7 +4,10 @@ namespace Modules\Reaction\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Modules\Authorization\app\Models\User;
+use Modules\Product\app\Models\Product;
 
 class Review extends Model
 {
@@ -20,19 +23,15 @@ class Review extends Model
         'comment',
     ];
 
-    /**
-     * Get the moderation associated with the review.
-     */
-    public function moderation(): HasOne
+    public function user():BelongsTo
     {
-        return $this->hasOne(ReviewModeration::class);
+        return $this->belongsTo(User::class);
     }
 
-    public function rating(): HasOne
+    public function product():BelongsTo
     {
-        return $this->hasOne(Rating::class);
+        return $this->belongsTo(Product::class);
     }
-
 
     protected static function newFactory()
     {

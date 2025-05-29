@@ -16,7 +16,8 @@ return new class extends Migration
             $table->integer('product_id');
             $table->integer('user_id');
             $table->integer('rating');
-            $table->string('comment');
+            $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
+            $table->string('comment')->nullable();
             $table->timestamps();
         });
     }
