@@ -37,7 +37,6 @@ class DatabaseSeeder extends Seeder
 
             // Content
             \Modules\ContentManagement\database\seeders\MediaSeeder::class,
-            \Modules\ContentManagement\database\seeders\PageSeeder::class,
             \Modules\ContentManagement\database\seeders\BlogSeeder::class,
         ]);
 
@@ -107,10 +106,9 @@ class DatabaseSeeder extends Seeder
             \Modules\CommissionAndPayout\database\seeders\SettlementSeeder::class,
         ]);
 
-        // 7. Reviews and ratings
+        // 7. Reviews
         $this->call([
-            \Modules\Reaction\database\seeders\ReviewSeeder::class,
-            \Modules\Reaction\database\seeders\RatingSeeder::class,
+            \Modules\Reaction\database\seeders\ReactionSeeder::class,
         ]);
     }
 }
