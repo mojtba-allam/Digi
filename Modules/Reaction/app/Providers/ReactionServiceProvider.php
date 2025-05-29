@@ -11,11 +11,9 @@ class ReactionServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(
-            ReviewRepositoryInterface::class,
             EloquentReviewRepository::class
         );
         $this->app->bind(
-            \Modules\Reaction\app\Repositories\RatingRepositoryInterface::class,
             \Modules\Reaction\app\Repositories\EloquentRatingRepository::class
         );
     }
