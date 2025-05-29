@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Authorization\app\Models\User;
 use Modules\User\app\Models\Address;
 use Modules\User\App\Models\City;
-use Modules\User\App\Models\Country;
+use Modules\User\app\Models\Country;
 
 class CountryFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      */
-    protected $model = Address::class;
+    protected $model = Country::class;
 
     /**
      * Define the model's default state.
@@ -21,7 +21,7 @@ class CountryFactory extends Factory
     public function definition(): array
     {
         return [
-            'country' => $this->faker->country(),
+            'name' => $this->faker->country(),
         ];
     }
 }
