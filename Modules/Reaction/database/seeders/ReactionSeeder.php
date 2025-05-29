@@ -10,10 +10,6 @@ class ReactionSeeder extends Seeder
 {
     public function run(): void
     {
-        $this->call([
-            Review::factory()
-            ->count(50)
-            ->create()
-        ]);
+        Review::factory()->count(50)->create();
     }
 }
