@@ -5,15 +5,15 @@ namespace Modules\User\database\factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Authorization\app\Models\User;
 use Modules\User\app\Models\Address;
-use Modules\User\App\Models\City;
-use Modules\User\App\Models\Country;
+use Modules\User\app\Models\City;
+use Modules\User\app\Models\Country;
 
 class CityFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      */
-    protected $model = Address::class;
+    protected $model = City::class;
 
     /**
      * Define the model's default state.

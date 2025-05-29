@@ -4,8 +4,8 @@ namespace Modules\User\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Modules\User\app\Models\Address;
-use Modules\User\App\Models\City;
-use Modules\User\App\Models\Country;
+use Modules\User\app\Models\City;
+use Modules\User\app\Models\Country;
 
 class AddressSeeder extends Seeder
 {

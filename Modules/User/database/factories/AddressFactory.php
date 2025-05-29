@@ -5,8 +5,8 @@ namespace Modules\User\Database\factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Authorization\app\Models\User;
 use Modules\User\app\Models\Address;
-use Modules\User\App\Models\City;
-use Modules\User\App\Models\Country;
+use Modules\User\app\Models\City;
+use Modules\User\app\Models\Country;
 
 class AddressFactory extends Factory
 {
