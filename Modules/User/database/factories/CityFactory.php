@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\User\Database\factories;
+namespace Modules\User\database\factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Authorization\app\Models\User;
@@ -8,7 +8,7 @@ use Modules\User\app\Models\Address;
 use Modules\User\App\Models\City;
 use Modules\User\App\Models\Country;
 
-class AddressFactory extends Factory
+class CityFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
@@ -21,10 +21,7 @@ class AddressFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => User::factory(),
-            'type' => $this->faker->randomElement(['home', 'work']),
-            'address' => $this->faker->address(),
-            'city_id' => City::factory(),
+            'city' => $this->faker->city,
             'country_id' => Country::factory(),
         ];
     }

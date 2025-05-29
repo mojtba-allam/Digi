@@ -4,6 +4,8 @@ namespace Modules\User\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Modules\User\app\Models\Address;
+use Modules\User\App\Models\City;
+use Modules\User\App\Models\Country;
 
 class AddressSeeder extends Seeder
 {
@@ -12,6 +14,13 @@ class AddressSeeder extends Seeder
      */
     public function run(): void
     {
-        Address::factory()->count(10)->create();
+        $country = Country::factory()->count(10)->create();
+        $city = city::factory(20)
+            ->recycle($country)
+            ->create();
+        Address::factory(30)
+            ->recycle($country)
+            ->recycle($city)
+            ->create();
     }
 }
