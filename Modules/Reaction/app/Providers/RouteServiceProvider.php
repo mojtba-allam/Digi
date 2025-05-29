@@ -12,12 +12,10 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map(): void
     {
-        // Load API routes: /api/...
         Route::prefix('api')
             ->middleware('api')
             ->group(module_path('Reaction', 'routes/api.php'));
 
-        // (Optional) Load web routes if you have them:
         Route::middleware('web')
             ->group(module_path('Reaction', 'routes/web.php'));
     }

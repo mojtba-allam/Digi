@@ -17,11 +17,6 @@ class Media extends Model
      */
     protected $fillable = ['type', 'url'];
 
-    public function pages(): HasMany
-    {
-        return $this->hasMany(Page::class);
-    }
-
     public function blogs(): HasMany
     {
         return $this->hasMany(Blog::class);
