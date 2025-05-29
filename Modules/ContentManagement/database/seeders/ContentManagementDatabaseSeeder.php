@@ -16,7 +16,6 @@ class ContentManagementDatabaseSeeder extends Seeder
 
         $this->call([
             MediaSeeder::class,
-            PageSeeder::class,
             BlogSeeder::class,
         ]);
 
