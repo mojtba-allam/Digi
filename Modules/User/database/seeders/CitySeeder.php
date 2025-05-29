@@ -1,19 +1,20 @@
 <?php
 
-namespace Modules\User\Database\Seeders;
+namespace Modules\User\database\seeders;
 
 use Illuminate\Database\Seeder;
 use Modules\User\app\Models\Address;
 use Modules\User\app\Models\City;
 use Modules\User\app\Models\Country;
 
-class AddressSeeder extends Seeder
+class CitySeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Address::factory(30)->create();
+        city::factory(20)->create();
+
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -47,6 +48,8 @@ class DatabaseSeeder extends Seeder
             \Modules\Notification\database\seeders\NotificationSeeder::class,
             \Modules\CustomerSupport\database\seeders\ChatSeeder::class,
             \Modules\User\database\seeders\ProfileSeeder::class,
+            \Modules\User\database\seeders\CountrySeeder::class,
+            \Modules\User\database\seeders\CitySeeder::class,
             \Modules\User\database\seeders\AddressSeeder::class,
             \Modules\User\database\seeders\UserSettingSeeder::class,
             \Modules\Authorization\database\seeders\PasswordResetSeeder::class,
