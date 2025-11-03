@@ -1,0 +1,339 @@
+/* Design System - Consistent Colors, Animations, and Styles */
+
+/* Color Palette */
+:root {
+    /* Primary Colors - Blue */
+    --color-primary-50: #EFF6FF;
+    --color-primary-100: #DBEAFE;
+    --color-primary-200: #BFDBFE;
+    --color-primary-300: #93C5FD;
+    --color-primary-400: #60A5FA;
+    --color-primary-500: #3B82F6;
+    --color-primary-600: #2563EB;
+    --color-primary-700: #1D4ED8;
+    --color-primary-800: #1E40AF;
+    --color-primary-900: #1E3A8A;
+    
+    /* Secondary Colors - Purple */
+    --color-secondary-50: #FAF5FF;
+    --color-secondary-100: #F3E8FF;
+    --color-secondary-200: #E9D5FF;
+    --color-secondary-300: #D8B4FE;
+    --color-secondary-400: #C084FC;
+    --color-secondary-500: #A855F7;
+    --color-secondary-600: #9333EA;
+    --color-secondary-700: #7E22CE;
+    --color-secondary-800: #6B21A8;
+    --color-secondary-900: #581C87;
+    
+    /* Success Colors - Green */
+    --color-success-50: #ECFDF5;
+    --color-success-100: #D1FAE5;
+    --color-success-200: #A7F3D0;
+    --color-success-300: #6EE7B7;
+    --color-success-400: #34D399;
+    --color-success-500: #10B981;
+    --color-success-600: #059669;
+    --color-success-700: #047857;
+    --color-success-800: #065F46;
+    --color-success-900: #064E3B;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-blue-purple: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+    --gradient-blue-pink: linear-gradient(135deg, #3B82F6 0%, #EC4899 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    
+    /* Border Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-2xl: 1.5rem;
+    --radius-full: 9999px;
+    
+    /* Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Button Styles */
+.btn {
+    @apply inline-flex items-center justify-center px-6 py-3 font-semibold rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-primary {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-lg transform hover:-translate-y-0.5;
+}
+
+.btn-secondary {
+    @apply bg-white text-gray-900 border-2 border-gray-200 hover:border-gray-300 hover:shadow-md;
+}
+
+.btn-success {
+    @apply bg-gradient-to-r from-green-500 to-green-600 text-white hover:shadow-lg transform hover:-translate-y-0.5;
+}
+
+.btn-outline {
+    @apply border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white;
+}
+
+/* Card Styles */
+.card {
+    @apply bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300;
+}
+
+.card-hover {
+    @apply hover:-translate-y-2;
+}
+
+.card-gradient {
+    @apply bg-gradient-to-br p-8 rounded-2xl;
+}
+
+/* Feature Box Styles */
+.feature-box {
+    @apply group relative bg-gradient-to-br rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2;
+}
+
+.feature-box-blue {
+    @apply from-blue-50 to-blue-100;
+}
+
+.feature-box-green {
+    @apply from-green-50 to-green-100;
+}
+
+.feature-box-purple {
+    @apply from-purple-50 to-purple-100;
+}
+
+.feature-icon {
+    @apply w-16 h-16 rounded-xl flex items-center justify-center mb-6 shadow-lg;
+}
+
+.feature-icon-blue {
+    @apply bg-gradient-to-br from-blue-500 to-blue-600;
+}
+
+.feature-icon-green {
+    @apply bg-gradient-to-br from-green-500 to-green-600;
+}
+
+.feature-icon-purple {
+    @apply bg-gradient-to-br from-purple-500 to-purple-600;
+}
+
+/* Badge Styles */
+.badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-bold;
+}
+
+.badge-primary {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 text-white;
+}
+
+.badge-success {
+    @apply bg-green-100 text-green-800;
+}
+
+.badge-warning {
+    @apply bg-yellow-100 text-yellow-800;
+}
+
+/* Input Styles */
+.input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200;
+}
+
+.input-error {
+    @apply border-red-500 focus:ring-red-500;
+}
+
+/* Link Styles */
+.link {
+    @apply text-blue-600 hover:text-blue-700 transition-colors duration-200;
+}
+
+.link-underline {
+    @apply underline underline-offset-4;
+}
+
+/* Animation Classes */
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Hover Effects */
+.hover-lift {
+    @apply transition-transform duration-200 hover:-translate-y-1;
+}
+
+.hover-glow {
+    @apply transition-shadow duration-200 hover:shadow-2xl;
+}
+
+/* Background Patterns */
+.bg-pattern-dots {
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.bg-pattern-grid {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Gradient Text */
+.text-gradient {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+}
+
+.text-gradient-green {
+    @apply bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent;
+}
+
+/* Product Card Specific */
+.product-card {
+    @apply group relative bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden hover:-translate-y-2;
+}
+
+.product-image-container {
+    @apply relative aspect-square overflow-hidden bg-gray-100;
+}
+
+.product-image {
+    @apply w-full h-full object-cover group-hover:scale-110 transition-transform duration-500;
+}
+
+.product-overlay {
+    @apply absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center;
+}
+
+.product-quick-view {
+    @apply transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 bg-white text-gray-900 px-6 py-2 rounded-full font-semibold shadow-xl;
+}
+
+/* Hero Section */
+.hero-gradient {
+    @apply relative bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500 overflow-hidden;
+}
+
+.hero-pattern {
+    @apply absolute inset-0 opacity-10;
+}
+
+/* Footer Styles */
+.footer-link {
+    @apply text-gray-300 hover:text-white transition-colors duration-200;
+}
+
+/* Form Styles */
+.form-group {
+    @apply mb-6;
+}
+
+.form-label {
+    @apply block text-sm font-semibold text-gray-700 mb-2;
+}
+
+.form-help {
+    @apply mt-1 text-sm text-gray-500;
+}
+
+.form-error-message {
+    @apply mt-1 text-sm text-red-600;
+}
+
+/* Table Styles */
+.table-container {
+    @apply overflow-x-auto rounded-xl shadow-md;
+}
+
+.table {
+    @apply min-w-full divide-y divide-gray-200;
+}
+
+.table-header {
+    @apply bg-gray-50;
+}
+
+.table-header-cell {
+    @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+}
+
+.table-body {
+    @apply bg-white divide-y divide-gray-200;
+}
+
+.table-cell {
+    @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900;
+}
+
+/* Alert Styles */
+.alert {
+    @apply px-4 py-3 rounded-xl relative mb-4;
+}
+
+.alert-success {
+    @apply bg-green-100 border border-green-400 text-green-700;
+}
+
+.alert-error {
+    @apply bg-red-100 border border-red-400 text-red-700;
+}
+
+.alert-warning {
+    @apply bg-yellow-100 border border-yellow-400 text-yellow-700;
+}
+
+.alert-info {
+    @apply bg-blue-100 border border-blue-400 text-blue-700;
+}

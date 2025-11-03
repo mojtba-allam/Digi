@@ -12,6 +12,7 @@ class PermissionSeeder extends Seeder
      */
     public function run()
     {
-        Permission::factory()->count(10)->create();
+        // Permissions are created in RolePermissionSeeder
+        // This seeder is kept for compatibility but does nothing
     }
 }

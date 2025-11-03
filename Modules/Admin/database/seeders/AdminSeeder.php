@@ -12,7 +12,13 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
-        Admin::factory()->count(10)->create();
+        $adminRole = \Modules\Authorization\app\Models\Role::where('name', 'admin')->first();
+        
+        if ($adminRole) {
+            Admin::factory()->count(10)->create([
+                'role_id' => $adminRole->id,
+            ]);
+        }
     }
 }
 

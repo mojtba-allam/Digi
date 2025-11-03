@@ -15,10 +15,7 @@ class AuthorizationDatabaseSeeder extends Seeder
 
 
         $this->call([
-            RoleSeeder::class,
-            PermissionSeeder::class,
             RolePermissionSeeder::class,
-            TemporaryPermissionSeeder::class,
             UserSeeder::class,
             OAuthSeeder::class,
             PasswordResetSeeder::class,

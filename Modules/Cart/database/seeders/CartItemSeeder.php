@@ -15,12 +15,23 @@ class CartItemSeeder extends Seeder
     public function run(): void
     {
         $carts = Cart::all();
+        $products = Product::all();
+
+        if ($products->isEmpty()) {
+            return;
+        }
 
         foreach ($carts as $cart) {
+            $product = $products->random();
+            $quantity = rand(1, 5);
+            
             DB::table('cart_items')->insert([
                 'cart_id' => $cart->id,
-                'product_id' => Product::factory()->create()->id,
-                'quantity' => rand(1, 5),
+                'product_id' => $product->id,
+                'product_variant_id' => null,
+                'quantity' => $quantity,
+                'price' => $product->price,
+                'options' => null,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

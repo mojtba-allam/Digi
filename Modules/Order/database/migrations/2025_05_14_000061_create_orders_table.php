@@ -13,10 +13,25 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-            $table->decimal('total_amount');
-            $table->string('status');
+            $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->string('order_number')->unique();
+            $table->string('status')->default('pending');
+            $table->decimal('subtotal', 10, 2);
+            $table->decimal('discount_amount', 10, 2)->default(0);
+            $table->decimal('shipping_amount', 10, 2)->default(0);
+            $table->decimal('tax_amount', 10, 2)->default(0);
+            $table->decimal('total_amount', 10, 2);
+            $table->string('currency', 3)->default('USD');
+            $table->json('billing_address');
+            $table->json('shipping_address');
+            $table->text('notes')->nullable();
+            $table->timestamp('shipped_at')->nullable();
+            $table->timestamp('delivered_at')->nullable();
             $table->timestamps();
+            
+            $table->index(['user_id', 'status']);
+            $table->index(['status', 'created_at']);
+            $table->index('order_number');
         });
     }
 

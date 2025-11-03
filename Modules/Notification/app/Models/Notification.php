@@ -18,7 +18,11 @@ class Notification extends Model
         'title',
         'body',
         'read_at',
-        'user_id'
+        'user_id',
+        'type',
+        'data',
+        'action_url',
+        'priority'
     ];
 
     /**
@@ -26,6 +30,7 @@ class Notification extends Model
      */
     protected $casts = [
         'read_at' => 'datetime',
+        'data' => 'array',
     ];
 
     protected static function newFactory()
@@ -39,5 +44,61 @@ class Notification extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Mark notification as read
+     */
+    public function markAsRead(): bool
+    {
+        return $this->update(['read_at' => now()]);
+    }
+
+    /**
+     * Check if notification is read
+     */
+    public function isRead(): bool
+    {
+        return !is_null($this->read_at);
+    }
+
+    /**
+     * Check if notification is unread
+     */
+    public function isUnread(): bool
+    {
+        return is_null($this->read_at);
+    }
+
+    /**
+     * Scope for unread notifications
+     */
+    public function scopeUnread($query)
+    {
+        return $query->whereNull('read_at');
+    }
+
+    /**
+     * Scope for read notifications
+     */
+    public function scopeRead($query)
+    {
+        return $query->whereNotNull('read_at');
+    }
+
+    /**
+     * Scope for notifications by type
+     */
+    public function scopeOfType($query, string $type)
+    {
+        return $query->where('type', $type);
+    }
+
+    /**
+     * Scope for high priority notifications
+     */
+    public function scopeHighPriority($query)
+    {
+        return $query->where('priority', 'high');
     }
 }

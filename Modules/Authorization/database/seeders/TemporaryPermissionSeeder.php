@@ -12,6 +12,23 @@ class TemporaryPermissionSeeder extends Seeder
      */
     public function run()
     {
-        TemporaryPermission::factory()->count(10)->create();
+        $admins = \Modules\Admin\app\Models\Admin::all();
+        $roles = \Modules\Authorization\app\Models\Role::all();
+        $permissions = \Modules\Authorization\app\Models\Permission::all();
+        
+        if ($admins->isEmpty() || $roles->isEmpty() || $permissions->isEmpty()) {
+            return;
+        }
+        
+        foreach (range(1, 10) as $i) {
+            TemporaryPermission::create([
+                'admin_id' => $admins->random()->id,
+                'role_id' => $roles->random()->id,
+                'permission_id' => $permissions->random()->id,
+                'granted_at' => now(),
+                'expires_at' => now()->addDays(rand(7, 30)),
+                'condition' => fake()->sentence(),
+            ]);
+        }
     }
 }

@@ -1,4 +1,17 @@
 @import 'tailwindcss';
+@import './design-system.css';
+
+/* Ensure images load properly */
+img {
+    image-rendering: auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Product image placeholder */
+.product-image-placeholder {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -8,4 +21,29 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Custom styles */
+.btn-loading {
+    @apply opacity-50 cursor-not-allowed;
+}
+
+.form-error {
+    @apply border-red-500 focus:border-red-500 focus:ring-red-500;
+}
+
+.table-responsive {
+    @apply overflow-x-auto rounded-xl;
+}
+
+.sidebar-link {
+    @apply flex items-center px-4 py-2 text-sm font-medium rounded-xl transition-all duration-200 ease-in-out;
+}
+
+.sidebar-link-active {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md;
+}
+
+.sidebar-link-inactive {
+    @apply text-gray-600 hover:bg-gray-100 hover:text-gray-900;
 }

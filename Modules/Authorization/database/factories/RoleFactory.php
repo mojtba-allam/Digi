@@ -17,8 +17,12 @@ class RoleFactory extends Factory
      */
     public function definition(): array
     {
+        $roleName = $this->faker->randomElement(['admin', 'vendor', 'customer', 'manager', 'support']);
         return [
-            'role' => $this->faker->randomElement(['admin', 'vendor', 'customer', 'vendor','manger']),
+            'name' => $roleName,
+            'display_name' => ucfirst($roleName),
+            'description' => ucfirst($roleName) . ' role',
+            'guard_name' => 'web',
         ];
     }
 }

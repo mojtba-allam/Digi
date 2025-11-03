@@ -16,7 +16,7 @@ class OrderStatus extends Model
     /**
      * The attributes that are mass assignable.
      */
-    protected $fillable = ['order_id', 'status'];
+    protected $fillable = ['order_id', 'status', 'notes'];
 
     public function order(): BelongsTo
     {

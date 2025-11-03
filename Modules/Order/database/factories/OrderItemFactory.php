@@ -19,11 +19,22 @@ class OrderItemFactory extends Factory
      */
     public function definition(): array
     {
+        $product = \Modules\Product\app\Models\Product::inRandomOrder()->first();
+        $variant = ProductVariant::inRandomOrder()->first();
+        $quantity = $this->faker->numberBetween(1, 5);
+        $price = $product ? $product->price : $this->faker->randomFloat(2, 10, 500);
+        $total = $price * $quantity;
+        
         return [
-            'product_variant_id' => ProductVariant::factory(),
-            'quantity' => $this->faker->numberBetween(1, 5),
-            'price' => $this->faker->randomFloat(2, 10, 500),
-            'order_id' => Order::factory(),
+            'order_id' => Order::inRandomOrder()->first()->id,
+            'product_id' => $product->id,
+            'product_variant_id' => $variant?->id,
+            'quantity' => $quantity,
+            'price' => $price,
+            'total' => $total,
+            'product_name' => $product->name,
+            'product_sku' => $product->sku ?? null,
+            'product_options' => null,
         ];
     }
 }

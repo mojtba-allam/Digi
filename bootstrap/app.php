@@ -16,7 +16,12 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->alias([
+            'role' => \Modules\Authorization\app\Http\Middleware\RoleMiddleware::class,
+            'permission' => \Modules\Authorization\app\Http\Middleware\PermissionMiddleware::class,
+            'api.role' => \Modules\Authorization\app\Http\Middleware\ApiRoleMiddleware::class,
+            'api.permission' => \Modules\Authorization\app\Http\Middleware\ApiPermissionMiddleware::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         // Validation errors → 422 + { message, errors }
