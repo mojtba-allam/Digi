@@ -19,12 +19,13 @@ use Modules\Authorization\app\Traits\ApiResponseTrait;
 class AuthController extends Controller
 {
     use ApiResponseTrait;
-{
+
     /**
      * Register a new user
      */
     public function register(RegisterRequest $request): JsonResponse
     {
+        /** @var \Modules\Authorization\app\Models\User $user */
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -62,7 +63,7 @@ class AuthController extends Controller
     public function login(LoginRequest $request): JsonResponse
     {
         $key = 'login.' . $request->ip();
-        
+
         if (RateLimiter::tooManyAttempts($key, 5)) {
             $seconds = RateLimiter::availableIn($key);
             return $this->errorResponse(
@@ -77,11 +78,12 @@ class AuthController extends Controller
         }
 
         RateLimiter::clear($key);
-        
+
+        /** @var \Modules\Authorization\app\Models\User $user */
         $user = Auth::user();
         $user->load('roles');
         $roles = $user->roles->pluck('name')->toArray();
-        
+
         // Create token with user roles as abilities
         $token = $user->createToken('auth-token', $roles)->plainTextToken;
 
@@ -106,9 +108,10 @@ class AuthController extends Controller
      */
     public function me(Request $request): JsonResponse
     {
+        /** @var \Modules\Authorization\app\Models\User $user */
         $user = $request->user();
         $user->load('roles.permissions');
-        
+
         return $this->resourceResponse(
             new UserResource($user),
             'User profile retrieved successfully'
@@ -120,11 +123,12 @@ class AuthController extends Controller
      */
     public function refresh(Request $request): JsonResponse
     {
+        /** @var \Modules\Authorization\app\Models\User $user */
         $user = $request->user();
-        
+
         // Delete current token
         $request->user()->currentAccessToken()->delete();
-        
+
         // Create new token
         $roles = $user->roles->pluck('name')->toArray();
         $token = $user->createToken('auth-token', $roles)->plainTextToken;
@@ -146,7 +150,7 @@ class AuthController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return $this->validationErrorResponse($validator->errors());
+            return $this->validationErrorResponse($validator->errors()->toArray());
         }
 
         $user = $request->user();
@@ -172,12 +176,12 @@ class AuthController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return $this->validationErrorResponse($validator->errors());
+            return $this->validationErrorResponse($validator->errors()->toArray());
         }
 
         // Here you would typically send a password reset email
         // For now, we'll just return a success message
-        
+
         return $this->successResponse(null, 'Password reset link sent to your email');
     }
 
@@ -193,12 +197,12 @@ class AuthController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return $this->validationErrorResponse($validator->errors());
+            return $this->validationErrorResponse($validator->errors()->toArray());
         }
 
         // Here you would typically validate the reset token
         // For now, we'll just update the password
-        
+
         $user = User::where('email', $request->email)->first();
         $user->update([
             'password' => Hash::make($request->password),
@@ -207,3 +211,4 @@ class AuthController extends Controller
         return $this->successResponse(null, 'Password reset successfully');
     }
 }
+

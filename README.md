@@ -1,61 +1,236 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Digi - Modular E-commerce Platform
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Digi is a modern, modular e-commerce platform built with Laravel 12 and PHP 8.2+. It follows a modular architecture using the `nwidart/laravel-modules` package, making it highly scalable and maintainable.
 
-## About Laravel
+## Table of Contents
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- [Digi - Modular E-commerce Platform](#digi---modular-e-commerce-platform)
+  - [Table of Contents](#table-of-contents)
+  - [Project Overview](#project-overview)
+  - [Key Features](#key-features)
+  - [Technology Stack](#technology-stack)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Application](#running-the-application)
+    - [Development Mode](#development-mode)
+    - [Production Build](#production-build)
+    - [Individual Services](#individual-services)
+  - [Project Structure](#project-structure)
+  - [Available Modules](#available-modules)
+  - [Development](#development)
+    - [Module Development](#module-development)
+    - [Code Standards](#code-standards)
+    - [Adding New Modules](#adding-new-modules)
+  - [Testing](#testing)
+  - [License](#license)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Project Overview
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Digi is a comprehensive e-commerce solution designed with modularity in mind. Each feature is encapsulated in its own module, allowing for independent development, testing, and deployment. This architecture enables teams to work on different parts of the application simultaneously without conflicts.
 
-## Learning Laravel
+## Key Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Modular architecture for scalable development
+- User authentication and authorization system
+- Product management with categories
+- Shopping cart functionality
+- Order processing system
+- Payment integration
+- Vendor management
+- Customer support system
+- Analytics and reporting
+- Notification system
+- Search and filtering capabilities
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Technology Stack
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Backend**: Laravel 12, PHP 8.2+
+- **Frontend**: Vite 6, Tailwind CSS 4, Alpine.js 3
+- **Database**: MySQL (configurable)
+- **API**: Laravel Sanctum for API authentication
+- **Module System**: nwidart/laravel-modules
+- **Testing**: PestPHP with Laravel plugin
+- **Additional Libraries**: Swiper (sliders), Chart.js (data visualization)
 
-## Laravel Sponsors
+## Prerequisites
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- PHP 8.2 or higher
+- Composer
+- Node.js 16 or higher
+- NPM
+- MySQL or another supported database
+- Git
 
-### Premium Partners
+## Installation
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+1. Clone the repository:
 
-## Contributing
+   ```bash
+   git clone <repository-url>
+   cd Digi
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2. Install PHP dependencies:
 
-## Code of Conduct
+   ```bash
+   composer install
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+3. Install Node dependencies:
 
-## Security Vulnerabilities
+   ```bash
+   npm install
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+4. Copy and configure the environment file:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   Update the database and other configuration values in `.env` as needed.
+
+5. Generate application key:
+
+   ```bash
+   php artisan key:generate
+   ```
+
+6. Run database migrations:
+
+   ```bash
+   php artisan migrate
+   ```
+
+7. Seed the database (optional):
+
+   ```bash
+   php artisan db:seed
+   ```
+
+## Running the Application
+
+### Development Mode
+
+To start the development server with all necessary services:
+
+```bash
+composer run dev
+```
+
+This command uses `concurrently` to run:
+
+- PHP development server
+- Vite dev server for frontend assets
+- Laravel Pail for log streaming
+- Queue listener for background jobs
+
+### Production Build
+
+To build frontend assets for production:
+
+```bash
+npm run build
+```
+
+### Individual Services
+
+You can also run individual services separately:
+
+- Start PHP development server: `php artisan serve`
+- Start Vite dev server: `npm run dev`
+- Start queue worker: `php artisan queue:work`
+- Stream logs: `php artisan pail`
+
+## Project Structure
+
+```text
+Digi/
+├── app/                 # Core Laravel application files
+├── Modules/             # Modular components (18 modules)
+├── config/              # Configuration files
+├── database/            # Migrations, seeds, and factories
+├── public/              # Publicly accessible files
+├── resources/           # Views, CSS, and JavaScript
+├── routes/              # Application routes
+├── storage/             # File storage
+├── tests/               # Test files
+├── .env.example         # Environment configuration example
+├── composer.json        # PHP dependencies
+├── package.json         # Node dependencies
+└── vite.config.js       # Vite configuration
+```
+
+## Available Modules
+
+The application is divided into the following modules:
+
+- **Admin**: Administrative interface
+- **AnalyticsAndReporting**: Data analytics and reporting features
+- **Authorization**: User authentication and role-based access control
+- **Business**: Business and vendor management
+- **Cart**: Shopping cart functionality
+- **Category**: Product categorization system
+- **CommissionAndPayout**: Commission calculations and payout processing
+- **ContentManagement**: Content management system
+- **CustomerSupport**: Customer support and chat functionality
+- **List**: Wishlist and listing features
+- **Notification**: Notification system
+- **Order**: Order processing and management
+- **Payment**: Payment processing integration
+- **Product**: Product management
+- **PromotionAndCoupon**: Promotions and coupon system
+- **Reaction**: Reviews and ratings
+- **SearchAndFiltering**: Product search and filtering
+- **User**: User profile and settings
+
+## Development
+
+### Module Development
+
+Each module follows a consistent structure:
+
+```text
+Module/
+├── app/                 # Module-specific PHP code
+├── database/            # Module migrations and seeds
+├── routes/              # Module routes
+├── resources/           # Module views and assets
+├── tests/               # Module tests
+├── module.json          # Module configuration
+└── package.json         # Module Node dependencies
+```
+
+### Code Standards
+
+- PHP code follows PSR-12 standards
+- Code is formatted using Laravel Pint
+- Frontend code uses Tailwind CSS with utility-first approach
+
+### Adding New Modules
+
+To create a new module:
+
+```bash
+php artisan module:make ModuleName
+```
+
+## Testing
+
+The project uses PestPHP for testing with Laravel integration.
+
+Run all tests:
+
+```bash
+composer test
+```
+
+Or run tests with artisan:
+
+```bash
+php artisan test
+```
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is open-sourced software licensed under the MIT license.
